@@ -2,6 +2,7 @@
 
 
 # MarkBook
+
 ***Major Updates***
 - marks will now be updated live
 - added some colour
@@ -12,3 +13,6 @@
 
 - support for weighted mark
 - ability to pull marks form class list
+- documentation needed
+- colour scheme
+- threading
