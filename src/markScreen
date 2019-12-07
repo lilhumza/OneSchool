@@ -1,37 +1,22 @@
-import java.awt.EventQueue;
 import java.util.*;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import java.awt.BorderLayout;
 import java.awt.Font;
 
-import javax.swing.AbstractAction;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JButton;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
-import javax.swing.plaf.TableUI;
 
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableModel;
-import javax.swing.JPanel;
-import java.awt.Color;
-import java.awt.Desktop.Action;
 
-public class marksScreen implements TableModelListener{
 
-	private static JFrame frame;
-	private static JTable table;
-	private static JScrollPane scrollPane = new JScrollPane();
-	private static String[][] marks = {
+public class marksScreen{
+
+	static JTable table;
+	static JScrollPane scrollpane;
+	static String[][] marks = {
 			{"A", "70", "50", "50", "50", "50", "0", "0", "0", "0", "0", "0"},
 			{"A", "70", "50", "50", "50", "50", "0", "0", "0", "0", "0", "0"},
 			{"A", "70", "50", "50", "50", "50", "0", "0", "0", "0", "0", "0"},
@@ -59,101 +44,14 @@ public class marksScreen implements TableModelListener{
 	public static String[] assignments = {
 		" ", "Assignment1", "Assignment1","Assignment1", "Assignment1", "Assignment1", "Calculated Marks"
 	};
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					marksScreen window = new marksScreen();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
-	public marksScreen() {
-		initialize1();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	public static JFrame initialize1() {
-		frame = new JFrame();
-		frame.getContentPane().setForeground(new Color(0, 0, 0));
-		frame.getContentPane().setBackground(new Color(255, 255, 255));
-		frame.getContentPane().setFont(new Font("Times New Roman", Font.PLAIN, 20));
-				
-		
-		JPanel panel = new JPanel();
-		panel.setBackground(new Color(244, 164, 96));
-
-		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-						.addComponent(scrollPane, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 2106, Short.MAX_VALUE)
-						.addComponent(panel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 2096, Short.MAX_VALUE))
-					.addContainerGap())
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 69, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 829, Short.MAX_VALUE)
-					.addContainerGap())
-		);
-		
-		JLabel classGradebook = new JLabel("Chemistry 12 (SCH4U0) Gradebook");
-		classGradebook.setBackground(new Color(255, 165, 0));
-		classGradebook.setFont(new Font("Times New Roman", Font.BOLD, 40));
-		
-		JButton btnBack = new JButton("Back");
-		btnBack.setFont(new Font("Times New Roman", Font.PLAIN, 16));
-		GroupLayout gl_panel = new GroupLayout(panel);
-		gl_panel.setHorizontalGroup(
-			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(classGradebook)
-					.addPreferredGap(ComponentPlacement.RELATED, 1413, Short.MAX_VALUE)
-					.addComponent(btnBack))
-		);
-		gl_panel.setVerticalGroup(
-			gl_panel.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(classGradebook)
-					.addContainerGap())
-				.addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
-					.addComponent(btnBack)
-					.addContainerGap(40, Short.MAX_VALUE))
-		);
-		panel.setLayout(gl_panel);
-
-		calculateMark(marks);
-		createDisplayTable();
-
-		frame.getContentPane().setLayout(groupLayout);
-		frame.setBounds(100, 100, 2142, 977);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		return frame;
+	public static void displayTable(JScrollPane SP) {
+		scrollpane = SP;
+		createTable(SP);
 		
 	}
 	
 	public static void calculateMark(String[][] marks) {
+		System.out.println("Changed");
 		int total = 0;
 		for(int i = 0; i < marks.length; i++) {
 			for(int j = 1; j < assignments.length -1; j++) {
@@ -163,37 +61,17 @@ public class marksScreen implements TableModelListener{
 			total = 0;
 		}
 	}
-	
-	public static void SimpleTableDemo(JTable table) {
-        table.getModel().addTableModelListener(table);
-    }
-	
-	public void tableChanged(TableModelEvent e) {
-        int row = e.getFirstRow();
-        int column = e.getColumn();
-        TableModel model = (TableModel)e.getSource();
-        String columnName = model.getColumnName(column);
-        Object data = model.getValueAt(row, column);
 
-        System.out.println(columnName);
-        System.out.println(row);
-        System.out.println(column);
-        Arrays.deepToString(marks);
-        marks[row][column] = (String) data;
-        calculateMark(marks);
-        createDisplayTable();
-    }
 	
-	public static void createDisplayTable() {
+	public static void createTable(JScrollPane scrollPane) {
 		table = new JTable();
 		table.setFont(new Font("Times New Roman", Font.PLAIN, 30));
 		
-		
+		calculateMark(marks);
 		table.setModel(new DefaultTableModel(
 			marks, assignments
 		));
-		
-		calculateMark(marks);
+
 		
 		table.getColumnModel().getColumn(1).setMinWidth(32);
 		Font f = new Font("Arial", Font.BOLD, 25);
@@ -206,10 +84,29 @@ public class marksScreen implements TableModelListener{
 			table.getColumnModel().getColumn(i).setPreferredWidth(300);
 		}
 		
-		SimpleTableDemo(table);
 		
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		scrollPane.setViewportView(table);
 	}
-	
+
+	public void SimpleTableDemo(JTable table) {
+        table.getModel().addTableModelListener(table);
+    }
+
+	public void tableChanged(TableModelEvent e) {
+		 int row = e.getFirstRow();
+	     int column = e.getColumn();
+	     TableModel model = (TableModel)e.getSource();
+	     String columnName = model.getColumnName(column);
+	     Object data = model.getValueAt(row, column);
+
+	     System.out.println(columnName);
+	     System.out.println(row);
+	     System.out.println(column);
+	     Arrays.deepToString(marksScreen.marks);
+	     marksScreen.marks[row][column] = (String) data;
+	     marksScreen.calculateMark(marksScreen.marks);
+	     marksScreen.createTable(marksScreen.scrollpane);
+		
+	}
 }
