@@ -1,0 +1,137 @@
+import java.awt.EventQueue;
+import java.util.*;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.BorderLayout;
+import java.awt.Font;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JButton;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.plaf.TableUI;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
+
+public class marksScreen {
+
+	private JFrame frame;
+	private JTable table;
+	private String[][] marks = {
+			{"Weight", "", "", "", "", ""},
+			{"A", "70", "50", "50", "50", "50", "0"},
+			{"A", "50", "50", "50", "50", "50", "0"},
+			{"A", "50", "50", "30", "50", "50", "0"},
+			{"A", "50", "50", "50", "50", "50", "0"},
+			{"A", "20", "50", "50", "12", "50", "0"},
+			{"A", "90", "50", "50", "50", "50", "0"},
+			{"A", "50", "50", "50", "50", "50", "0"},
+			{"A", "12", "50", "50", "50", "50", "0"},
+			{"A", "50", "51", "50", "23", "50", "0"},
+			{"A", "50", "50", "50", "50", "50", "0"},
+			{"A", "50", "45", "50", "50", "50", "0"},
+			{"A", "50", "50", "50", "50", "50", "0"},
+			{"A", "50", "80", "50", "50", "50", "0"},
+			{"A", "50", "50", "28", "50", "50", "0"},
+			{"A", "50", "50", "50", "50", "50", "0"},
+			{"A", "50", "50", "50", "50", "50", "0"},
+			{"A", "50", "50", "50", "50", "50", "0"},
+		};
+	public String[] assignments = {
+		" ", "Assignment1", "Assignment1","Assignment1", "Assignment1", "Assignment1", "Calculated Grade"
+	};
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					marksScreen window = new marksScreen();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public marksScreen() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setFont(new Font("Times New Roman", Font.PLAIN, 20));
+		
+		JLabel classGradebook = new JLabel("Chemistry 12 (SCH4U0) Gradebook");
+		classGradebook.setFont(new Font("Times New Roman", Font.BOLD, 40));
+		
+		JScrollPane scrollPane = new JScrollPane();
+
+		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(24)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 1978, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap())
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(classGradebook, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addGap(1474))))
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(classGradebook, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addGap(31)
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 788, GroupLayout.PREFERRED_SIZE)
+					.addGap(61))
+		);
+		
+		table = new JTable();
+		table.setFont(new Font("Times New Roman", Font.PLAIN, 30));
+
+		calculateMark(marks);
+		
+		table.setModel(new DefaultTableModel(
+			marks,assignments
+		));
+		Font f = new Font("Arial", Font.BOLD, 25);
+	    JTableHeader header = table.getTableHeader();
+	    header.setFont(f);
+		for(int i = 0; i < table.getRowCount(); i++) {
+			table.setRowHeight(i, 30);
+		}
+		scrollPane.setViewportView(table);
+		frame.getContentPane().setLayout(groupLayout);
+		frame.setBounds(100, 100, 2132, 977);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	public void calculateMark(String[][] marks) {
+		int total = 0;
+		for(int i = 1; i < marks.length; i++) {
+			for(int j = 1; j < assignments.length -1; j++) {
+				total += Integer.parseInt(marks[i][j]);
+			}
+			marks[i][assignments.length -1] = Integer.toString(total/(assignments.length - 2));
+			total = 0;
+		}
+	}
+}
