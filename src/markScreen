@@ -28,10 +28,10 @@ import java.awt.Desktop.Action;
 
 public class marksScreen implements TableModelListener{
 
-	private JFrame frame;
-	private JTable table;
-	private JScrollPane scrollPane = new JScrollPane();
-	private String[][] marks = {
+	private static JFrame frame;
+	private static JTable table;
+	private static JScrollPane scrollPane = new JScrollPane();
+	private static String[][] marks = {
 			{"A", "70", "50", "50", "50", "50", "0", "0", "0", "0", "0", "0"},
 			{"A", "70", "50", "50", "50", "50", "0", "0", "0", "0", "0", "0"},
 			{"A", "70", "50", "50", "50", "50", "0", "0", "0", "0", "0", "0"},
@@ -56,7 +56,7 @@ public class marksScreen implements TableModelListener{
 			{"A", "70", "50", "50", "50", "50", "0", "0", "0", "0", "0", "0"},
 			
 	};
-	public String[] assignments = {
+	public static String[] assignments = {
 		" ", "Assignment1", "Assignment1","Assignment1", "Assignment1", "Assignment1", "Calculated Marks"
 	};
 
@@ -80,13 +80,13 @@ public class marksScreen implements TableModelListener{
 	 * Create the application.
 	 */
 	public marksScreen() {
-		initialize();
+		initialize1();
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public static JFrame initialize1() {
 		frame = new JFrame();
 		frame.getContentPane().setForeground(new Color(0, 0, 0));
 		frame.getContentPane().setBackground(new Color(255, 255, 255));
@@ -149,10 +149,11 @@ public class marksScreen implements TableModelListener{
 		frame.getContentPane().setLayout(groupLayout);
 		frame.setBounds(100, 100, 2142, 977);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		return frame;
 		
 	}
 	
-	public void calculateMark(String[][] marks) {
+	public static void calculateMark(String[][] marks) {
 		int total = 0;
 		for(int i = 0; i < marks.length; i++) {
 			for(int j = 1; j < assignments.length -1; j++) {
@@ -163,8 +164,8 @@ public class marksScreen implements TableModelListener{
 		}
 	}
 	
-	public void SimpleTableDemo(JTable table) {
-        table.getModel().addTableModelListener(this);
+	public static void SimpleTableDemo(JTable table) {
+        table.getModel().addTableModelListener(table);
     }
 	
 	public void tableChanged(TableModelEvent e) {
@@ -183,7 +184,7 @@ public class marksScreen implements TableModelListener{
         createDisplayTable();
     }
 	
-	public void createDisplayTable() {
+	public static void createDisplayTable() {
 		table = new JTable();
 		table.setFont(new Font("Times New Roman", Font.PLAIN, 30));
 		
