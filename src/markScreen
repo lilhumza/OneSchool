@@ -63,6 +63,9 @@ public class marksScreen{
 	}
 
 	
+	/**
+	 * @wbp.parser.entryPoint
+	 */
 	public static void createTable(JScrollPane scrollPane) {
 		table = new JTable();
 		table.setFont(new Font("Times New Roman", Font.PLAIN, 30));
