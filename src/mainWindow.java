@@ -9,15 +9,12 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import javax.swing.JPanel;
 import java.awt.Font;
-import java.awt.Graphics;
 
-import javax.swing.SwingConstants;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 import javax.swing.event.TableModelEvent;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.JTableHeader;
+import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
 
 import java.awt.SystemColor;
@@ -28,7 +25,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-public class mainWindow {
+public class mainWindow implements TableModelListener{
 
 	private JFrame frame;
 	JScrollPane scrollPane = new JScrollPane();
@@ -192,7 +189,7 @@ public class mainWindow {
 						.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
 							.addContainerGap()
 							.addComponent(btnStats, GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE))
-						.addGroup(gl_panel.createSequentialGroup()
+						.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
 							.addContainerGap()
 							.addComponent(btnInventory, GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE))
 						.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
@@ -202,7 +199,7 @@ public class mainWindow {
 							.addContainerGap()
 							.addComponent(btnDashboard, GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE))
 						.addGroup(gl_panel.createSequentialGroup()
-							.addGap(39)
+							.addGap(46)
 							.addComponent(lblNewLabel)))
 					.addContainerGap())
 		);
@@ -221,7 +218,32 @@ public class mainWindow {
 					.addComponent(btnStats, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(415, Short.MAX_VALUE))
 		);
+		marksScreen.calculateMark(marksScreen.marks);
+	    marksScreen.createTable(marksScreen.scrollpane);
+	    SimpleTableDemo(marksScreen.table);
 		panel.setLayout(gl_panel);
 		frame.getContentPane().setLayout(groupLayout);
+	}
+	
+	public void SimpleTableDemo(JTable table) {
+        table.getModel().addTableModelListener(this);
+    }
+
+	public void tableChanged(TableModelEvent e) {
+		 int row = e.getFirstRow();
+	     int column = e.getColumn();
+	     TableModel model = (TableModel)e.getSource();
+	     String columnName = model.getColumnName(column);
+	     Object data = model.getValueAt(row, column);
+
+	     System.out.println(columnName);
+	     System.out.println(row);
+	     System.out.println(column);
+	     Arrays.deepToString(marksScreen.marks);
+	     marksScreen.marks[row][column] = (String) data;
+	     marksScreen.calculateMark(marksScreen.marks);
+	     marksScreen.createTable(marksScreen.scrollpane);
+	     SimpleTableDemo(marksScreen.table);
+		
 	}
 }
