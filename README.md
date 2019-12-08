@@ -8,6 +8,7 @@
 - added some colour
 - marks will be unweighted
 - added horizontal/verticle scroll bar
+- added combobox which changes the title of markbook
 
 ***Needs Work***
 
@@ -16,3 +17,4 @@
 - documentation needed
 - colour scheme
 - threading
+- table needs to change with combo box
