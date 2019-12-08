@@ -87,21 +87,46 @@ public class mainWindow {
 					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 938, GroupLayout.PREFERRED_SIZE)
 					.addGap(11))
 		);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(Color.LIGHT_GRAY);
 
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
 		gl_panel_1.setHorizontalGroup(
 			gl_panel_1.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_1.createSequentialGroup()
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 2102, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(66, Short.MAX_VALUE))
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(scrollPane, Alignment.LEADING)
+						.addComponent(panel_2, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addContainerGap(26, Short.MAX_VALUE))
 		);
 		gl_panel_1.setVerticalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGap(26)
-					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 913, Short.MAX_VALUE)
-					.addGap(27))
+			gl_panel_1.createParallelGroup(Alignment.TRAILING)
+				.addGroup(Alignment.LEADING, gl_panel_1.createSequentialGroup()
+					.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 796, Short.MAX_VALUE)
+					.addContainerGap())
 		);
+		
+		JLabel lblNewLabel_1 = new JLabel("Markbook");
+		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 40));
+		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
+		gl_panel_2.setHorizontalGroup(
+			gl_panel_2.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_2.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblNewLabel_1)
+					.addContainerGap(1909, Short.MAX_VALUE))
+		);
+		gl_panel_2.setVerticalGroup(
+			gl_panel_2.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_2.createSequentialGroup()
+					.addGap(34)
+					.addComponent(lblNewLabel_1)
+					.addContainerGap(44, Short.MAX_VALUE))
+		);
+		panel_2.setLayout(gl_panel_2);
 		marksScreen.displayTable(scrollPane);
 		panel_1.setLayout(gl_panel_1);
 		
@@ -166,19 +191,19 @@ public class mainWindow {
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 						.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
 							.addContainerGap()
-							.addComponent(btnDashboard, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-						.addGroup(gl_panel.createSequentialGroup()
-							.addGap(40)
-							.addComponent(lblNewLabel))
+							.addComponent(btnStats, GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE))
 						.addGroup(gl_panel.createSequentialGroup()
 							.addContainerGap()
 							.addComponent(btnInventory, GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE))
 						.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
 							.addContainerGap()
 							.addComponent(btnMarkbook, GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE))
-						.addGroup(gl_panel.createSequentialGroup()
+						.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
 							.addContainerGap()
-							.addComponent(btnStats, GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)))
+							.addComponent(btnDashboard, GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE))
+						.addGroup(gl_panel.createSequentialGroup()
+							.addGap(39)
+							.addComponent(lblNewLabel)))
 					.addContainerGap())
 		);
 		gl_panel.setVerticalGroup(
@@ -186,7 +211,7 @@ public class mainWindow {
 				.addGroup(gl_panel.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblNewLabel)
-					.addGap(180)
+					.addGap(302)
 					.addComponent(btnDashboard)
 					.addGap(18)
 					.addComponent(btnMarkbook, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
@@ -194,7 +219,7 @@ public class mainWindow {
 					.addComponent(btnInventory, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 					.addGap(18)
 					.addComponent(btnStats, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(526, Short.MAX_VALUE))
+					.addContainerGap(415, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
 		frame.getContentPane().setLayout(groupLayout);
