@@ -1,18 +1,12 @@
-import java.util.*;
-
 import java.awt.Font;
-
-import javax.swing.event.TableModelEvent;
-import javax.swing.event.TableModelListener;
 
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
-import javax.swing.table.TableModel;
 
 
-public class marksScreen{
+public class marksScreen {
 
 	static JTable table;
 	static JScrollPane scrollpane;
@@ -90,26 +84,7 @@ public class marksScreen{
 		
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		scrollPane.setViewportView(table);
-	}
-
-	public void SimpleTableDemo(JTable table) {
-        table.getModel().addTableModelListener(table);
-    }
-
-	public void tableChanged(TableModelEvent e) {
-		 int row = e.getFirstRow();
-	     int column = e.getColumn();
-	     TableModel model = (TableModel)e.getSource();
-	     String columnName = model.getColumnName(column);
-	     Object data = model.getValueAt(row, column);
-
-	     System.out.println(columnName);
-	     System.out.println(row);
-	     System.out.println(column);
-	     Arrays.deepToString(marksScreen.marks);
-	     marksScreen.marks[row][column] = (String) data;
-	     marksScreen.calculateMark(marksScreen.marks);
-	     marksScreen.createTable(marksScreen.scrollpane);
 		
 	}
+
 }
