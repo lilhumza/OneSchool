@@ -18,4 +18,4 @@
 - colour scheme
 - threading
 - table needs to change with combo box
-- panels are trash
+- panels mangement are absoulute trash
