@@ -65,13 +65,11 @@ public class mainWindow implements TableModelListener, ItemListener{
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(UIManager.getColor("Tree.background"));
-		frame.setBounds(100, 100, 2407, 977);
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(SystemColor.controlText);
-		
-		ImageIcon image = new ImageIcon("C:/Users/draft/eclipse-workspace/OneSchool/src/kisspng-dashboard-business-intelligence-management-informa-dashboard-5adceebbd6e940.5844354015244284758803.jpg");
 		
 		JPanel classXMarkbook = new JPanel();
 		classXMarkbook.setBackground(Color.WHITE);
@@ -98,9 +96,9 @@ public class mainWindow implements TableModelListener, ItemListener{
 		gl_classXMarkbook.setHorizontalGroup(
 			gl_classXMarkbook.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_classXMarkbook.createSequentialGroup()
-					.addGroup(gl_classXMarkbook.createParallelGroup(Alignment.TRAILING, false)
-						.addComponent(panel_2, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(SPMarkbook, Alignment.LEADING))
+					.addGroup(gl_classXMarkbook.createParallelGroup(Alignment.LEADING)
+						.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(SPMarkbook, GroupLayout.PREFERRED_SIZE, 1089, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		gl_classXMarkbook.setVerticalGroup(
@@ -108,11 +106,9 @@ public class mainWindow implements TableModelListener, ItemListener{
 				.addGroup(gl_classXMarkbook.createSequentialGroup()
 					.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(SPMarkbook, GroupLayout.DEFAULT_SIZE, 796, Short.MAX_VALUE)
-					.addContainerGap())
+					.addComponent(SPMarkbook, GroupLayout.PREFERRED_SIZE, 574, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(233, Short.MAX_VALUE))
 		);
-		
-
 		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		
 		comboBox.setModel(new DefaultComboBoxModel(marksScreen.calsses));
@@ -262,6 +258,7 @@ public class mainWindow implements TableModelListener, ItemListener{
 	     SimpleTableDemo(marksScreen.table);
 		
 	}
+	
 	public void itemStateChanged(ItemEvent e) 
     { 
         if (e.getSource() == comboBox) { 
