@@ -1,5 +1,5 @@
 # OneSchool
-- dimentions 1000, 800
+- dimentions 1000, 500
 
 # MarkBook
 
