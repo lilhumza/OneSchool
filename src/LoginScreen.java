@@ -7,6 +7,7 @@ import javax.swing.JEditorPane;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import java.awt.Font;
 
 public class LoginScreen {
 
@@ -65,7 +66,8 @@ public class LoginScreen {
 		frame.getContentPane().add(lblPassword);
 		
 		JLabel lblLogin = new JLabel("Login");
-		lblLogin.setBounds(406, 58, 46, 14);
+		lblLogin.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblLogin.setBounds(406, 58, 46, 31);
 		frame.getContentPane().add(lblLogin);
 	}
 }
