@@ -66,7 +66,7 @@ public class marksTable {
 	 */
 	public static void createTable(JScrollPane scrollPane, String[][] coloums, String[] rows) {
 		table = new JTable();
-		table.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+		table.setFont(new Font("Times New Roman", Font.PLAIN, 15));
 		
 		calculateMark(marks);
 		table.setModel(new DefaultTableModel(
@@ -82,7 +82,7 @@ public class marksTable {
 			table.setRowHeight(i, 20);
 		}
 		for(int i = 0; i < table.getColumnCount(); i++) {
-			table.getColumnModel().getColumn(i).setPreferredWidth(150);
+			table.getColumnModel().getColumn(i).setPreferredWidth(125);
 		}
 		
 		
