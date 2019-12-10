@@ -90,45 +90,47 @@ public class markbook implements TableModelListener, ItemListener{
 		GroupLayout gl_classXMarkbook = new GroupLayout(classXMarkbook);
 		gl_classXMarkbook.setHorizontalGroup(
 			gl_classXMarkbook.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_classXMarkbook.createSequentialGroup()
+				.addGroup(gl_classXMarkbook.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(gl_classXMarkbook.createParallelGroup(Alignment.TRAILING)
-						.addComponent(SPMarkbook, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 964, Short.MAX_VALUE)
-						.addComponent(panel_2, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 964, Short.MAX_VALUE))
+					.addGroup(gl_classXMarkbook.createParallelGroup(Alignment.LEADING)
+						.addComponent(panel_2, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 964, Short.MAX_VALUE)
+						.addComponent(SPMarkbook, GroupLayout.DEFAULT_SIZE, 964, Short.MAX_VALUE))
 					.addContainerGap())
 		);
 		gl_classXMarkbook.setVerticalGroup(
 			gl_classXMarkbook.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_classXMarkbook.createSequentialGroup()
 					.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
+					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addComponent(SPMarkbook, GroupLayout.PREFERRED_SIZE, 395, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addContainerGap())
 		);
 		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		comboBox.setFont(new Font("Times New Roman", Font.PLAIN, 9));
 		
 		comboBox.setModel(new DefaultComboBoxModel(marksTable.calsses));
 		SimpleTableDemo1(comboBox);
 		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
 		gl_panel_2.setHorizontalGroup(
 			gl_panel_2.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_panel_2.createSequentialGroup()
-					.addContainerGap(609, Short.MAX_VALUE)
-					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(32))
 				.addGroup(Alignment.LEADING, gl_panel_2.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblNewLabel_1)
-					.addContainerGap(608, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED, 791, Short.MAX_VALUE)
+					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
 		);
 		gl_panel_2.setVerticalGroup(
 			gl_panel_2.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_2.createSequentialGroup()
-					.addGap(19)
-					.addComponent(lblNewLabel_1)
-					.addGap(33)
-					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_2.createSequentialGroup()
+							.addGap(19)
+							.addComponent(lblNewLabel_1))
+						.addGroup(gl_panel_2.createSequentialGroup()
+							.addGap(37)
+							.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(39, Short.MAX_VALUE))
 		);
 		panel_2.setLayout(gl_panel_2);
 		marksTable.displayTable(SPMarkbook);
