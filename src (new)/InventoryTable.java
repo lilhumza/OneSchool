@@ -15,31 +15,23 @@ public class InventoryTable {
 	static JScrollPane SPMarkbook;
 
 	static String[][] marks = {
-			{"A", "70", "50", "50", "50", "50", "0", "0", "0", "0", "0", "0"},
+			{"Beaker", "1234", "Alot", "InStock"},
+			{"Ball", "4321", "Alot", "InStock"},
+			{"STUFF", "#####", "Alot", "InStock"},
 			
 	};
 	public static String[] locations = {
-		" ", "Item#", "Status"
+		" ", "Item#", "Quantity", "Status"
 	};
 	public static String[] calsses = {
-			"Gym Equipment", "Science Equipment"
+			"Gym Inventory", "Science Inventory", "ChromeBook Inventory"
 		};
 	public static void displayTable(JScrollPane SP) {
 		SPMarkbook = SP;
 		createTable(SP, marks, locations);
 		
 	}
-	
-	public static void calculateMark(String[][] marks) {
-		int total = 0;
-		for(int i = 0; i < marks.length; i++) {
-			for(int j = 1; j < locations.length -1; j++) {
-				total += Integer.parseInt(marks[i][j]);
-			}
-			marks[i][locations.length -1] = Integer.toString(total/(locations.length - 2));
-			total = 0;
-		}
-	}
+
 
 	
 	/**
@@ -48,8 +40,6 @@ public class InventoryTable {
 	public static void createTable(JScrollPane scrollPane, String[][] coloums, String[] rows) {
 		table = new JTable();
 		table.setFont(new Font("Times New Roman", Font.PLAIN, 15));
-		
-		calculateMark(marks);
 		table.setModel(new DefaultTableModel(
 				coloums, rows
 		));
