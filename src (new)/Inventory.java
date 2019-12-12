@@ -70,7 +70,7 @@ public class Inventory implements TableModelListener, ItemListener{
 		frame.getContentPane().setBackground(UIManager.getColor("Tree.background"));
 		frame.setBounds(100,100,1000,500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		lblNewLabel_1.setText("Class");
+		lblNewLabel_1.setText(InventoryTable.calsses[0]);
 		
 		JPanel classXMarkbook = new JPanel();
 		classXMarkbook.setBackground(Color.WHITE);
@@ -133,7 +133,6 @@ public class Inventory implements TableModelListener, ItemListener{
 		InventoryTable.displayTable(SPMarkbook);
 		classXMarkbook.setLayout(gl_classXMarkbook);
 		Border emptyBorder = BorderFactory.createEmptyBorder();
-		InventoryTable.calculateMark(InventoryTable.marks);
 		InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.marks, InventoryTable.locations);
 	    SimpleTableDemo(InventoryTable.table);
 		frame.getContentPane().setLayout(groupLayout);
@@ -156,7 +155,6 @@ public class Inventory implements TableModelListener, ItemListener{
 
 	     Arrays.deepToString(InventoryTable.marks);
 	     InventoryTable.marks[row][column] = (String) data;
-	     InventoryTable.calculateMark(InventoryTable.marks);
 	     InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.marks, InventoryTable.locations);
 	     SimpleTableDemo(InventoryTable.table);
 		
