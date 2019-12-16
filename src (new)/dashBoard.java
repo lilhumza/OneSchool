@@ -20,24 +20,12 @@ import java.awt.event.MouseEvent;
 
 public class dashBoard {
 
-	private JFrame frame;
+	JFrame frame1;
 	private JLabel lblWelcome;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					dashBoard window = new dashBoard();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
@@ -50,16 +38,16 @@ public class dashBoard {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.getContentPane().setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
-		frame.setBounds(100, 100, 1000, 500);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frame1 = new JFrame();
+		frame1.getContentPane().setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		frame1.setBounds(100, 100, 1000, 500);
+		frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame1.getContentPane().setLayout(null);
 		
 		JPanel navPanel = new JPanel();
 		navPanel.setBounds(0, 0, 160, 455);
 		navPanel.setBackground(Color.DARK_GRAY);
-		frame.getContentPane().add(navPanel);
+		frame1.getContentPane().add(navPanel);
 		navPanel.setLayout(null);
 		
 		JLabel lblMenu = new JLabel("Menu");
@@ -80,6 +68,20 @@ public class dashBoard {
 		navPanel.add(btnMarkBook);
 		
 		JButton btnGymInventory = new JButton("GYM Inventory");
+		btnGymInventory.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							markbook markbookw = new markbook();
+							markbookw.frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
 		btnGymInventory.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -122,7 +124,7 @@ public class dashBoard {
 		JPanel attendancePanel = new JPanel();
 		attendancePanel.setBounds(192, 250, 165, 165);
 		attendancePanel.setBackground(Color.LIGHT_GRAY);
-		frame.getContentPane().add(attendancePanel);
+		frame1.getContentPane().add(attendancePanel);
 		attendancePanel.setLayout(null);
 		
 		JLabel label = new JLabel("16/29");
@@ -140,7 +142,7 @@ public class dashBoard {
 		JPanel gymPanel = new JPanel();
 		gymPanel.setBounds(390, 250, 165, 165);
 		gymPanel.setBackground(Color.GRAY);
-		frame.getContentPane().add(gymPanel);
+		frame1.getContentPane().add(gymPanel);
 		gymPanel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("17/32");
@@ -157,7 +159,7 @@ public class dashBoard {
 		JPanel sncPanel = new JPanel();
 		sncPanel.setBounds(582, 250, 165, 165);
 		sncPanel.setBackground(Color.DARK_GRAY);
-		frame.getContentPane().add(sncPanel);
+		frame1.getContentPane().add(sncPanel);
 		sncPanel.setLayout(null);
 		
 		JLabel lblNewLabel_1 = new JLabel("ZERO");
@@ -175,7 +177,7 @@ public class dashBoard {
 		JPanel datePanel = new JPanel();
 		datePanel.setBounds(776, 250, 165, 165);
 		datePanel.setBackground(Color.BLACK);
-		frame.getContentPane().add(datePanel);
+		frame1.getContentPane().add(datePanel);
 		datePanel.setLayout(null);
 		
 		JLabel lblDec = new JLabel("10 DEC");
@@ -197,7 +199,7 @@ public class dashBoard {
 		lblWelcome.setFont(new Font("Tahoma", Font.BOLD, 22));
 		lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWelcome.setBackground(Color.DARK_GRAY);
-		frame.getContentPane().add(lblWelcome);
+		frame1.getContentPane().add(lblWelcome);
 		
 		JTextArea txtrWelcome = new JTextArea();
 		txtrWelcome.setBackground(Color.WHITE);
@@ -206,13 +208,13 @@ public class dashBoard {
 		txtrWelcome.setWrapStyleWord(true);
 		txtrWelcome.setText("OneSchool is an intuituve solution for teachers to quickly access and manage related items to students in their respective classes. Included options are Attendance, Markbook and Inventories for the GYM and Science Depts. ");
 		txtrWelcome.setBounds(192, 94, 363, 140);
-		frame.getContentPane().add(txtrWelcome);
+		frame1.getContentPane().add(txtrWelcome);
 		
 		JTextArea txtrPrivateNotes = new JTextArea();
 		txtrPrivateNotes.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		txtrPrivateNotes.setLineWrap(true);
 		txtrPrivateNotes.setText("Private Notes: ");
 		txtrPrivateNotes.setBounds(582, 45, 359, 190);
-		frame.getContentPane().add(txtrPrivateNotes);
+		frame1.getContentPane().add(txtrPrivateNotes);
 	}
 }
