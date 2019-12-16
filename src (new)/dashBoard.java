@@ -41,7 +41,7 @@ public class dashBoard {
 		frame1 = new JFrame();
 		frame1.getContentPane().setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 		frame1.setBounds(100, 100, 1000, 500);
-		frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame1.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		frame1.getContentPane().setLayout(null);
 		
 		JPanel navPanel = new JPanel();
