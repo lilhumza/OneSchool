@@ -73,6 +73,16 @@ public class LoginScreen {
 		btnLogIn.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnLogIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							dashBoard window = new dashBoard();
+							window.frame1.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
 			}
 		});
 		btnLogIn.setBounds(384, 244, 89, 23);
