@@ -33,29 +33,18 @@ import javax.swing.DefaultComboBoxModel;
 
 public class markbook implements TableModelListener, ItemListener{
 
-	private JFrame frame;
+	JFrame frame;
 	JScrollPane SPMarkbook = new JScrollPane();
 	JComboBox comboBox = new JComboBox();
-	JLabel lblNewLabel_1 = new JLabel("Markbook");
+	JLabel lblNewLabel_1 = new JLabel("");
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					markbook markbookw = new markbook();
-					markbookw.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
+	 * @wbp.parser.entryPoint
 	 */
 	public markbook() {
 		initialize();
@@ -68,7 +57,8 @@ public class markbook implements TableModelListener, ItemListener{
 		frame = new JFrame();
 		frame.getContentPane().setBackground(UIManager.getColor("Tree.background"));
 		frame.setBounds(100,100,1000,500);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); 
+		lblNewLabel_1.setText(marksTable.calsses[0]);
 		
 		JPanel classXMarkbook = new JPanel();
 		classXMarkbook.setBackground(Color.WHITE);
@@ -90,16 +80,12 @@ public class markbook implements TableModelListener, ItemListener{
 		GroupLayout gl_classXMarkbook = new GroupLayout(classXMarkbook);
 		gl_classXMarkbook.setHorizontalGroup(
 			gl_classXMarkbook.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_classXMarkbook.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(gl_classXMarkbook.createParallelGroup(Alignment.LEADING)
-						.addComponent(panel_2, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 964, Short.MAX_VALUE)
-						.addComponent(SPMarkbook, GroupLayout.DEFAULT_SIZE, 964, Short.MAX_VALUE))
-					.addContainerGap())
+				.addComponent(SPMarkbook, GroupLayout.DEFAULT_SIZE, 984, Short.MAX_VALUE)
+				.addComponent(panel_2, GroupLayout.DEFAULT_SIZE, 984, Short.MAX_VALUE)
 		);
 		gl_classXMarkbook.setVerticalGroup(
 			gl_classXMarkbook.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_classXMarkbook.createSequentialGroup()
+				.addGroup(Alignment.TRAILING, gl_classXMarkbook.createSequentialGroup()
 					.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addComponent(SPMarkbook, GroupLayout.PREFERRED_SIZE, 395, GroupLayout.PREFERRED_SIZE)
@@ -116,21 +102,20 @@ public class markbook implements TableModelListener, ItemListener{
 				.addGroup(Alignment.LEADING, gl_panel_2.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblNewLabel_1)
-					.addPreferredGap(ComponentPlacement.RELATED, 791, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED, 816, Short.MAX_VALUE)
 					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
 		gl_panel_2.setVerticalGroup(
 			gl_panel_2.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_2.createSequentialGroup()
-					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_2.createSequentialGroup()
-							.addGap(19)
-							.addComponent(lblNewLabel_1))
-						.addGroup(gl_panel_2.createSequentialGroup()
-							.addGap(37)
-							.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+					.addGap(19)
+					.addComponent(lblNewLabel_1)
 					.addContainerGap(39, Short.MAX_VALUE))
+				.addGroup(Alignment.TRAILING, gl_panel_2.createSequentialGroup()
+					.addContainerGap(31, Short.MAX_VALUE)
+					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
 		);
 		panel_2.setLayout(gl_panel_2);
 		marksTable.displayTable(SPMarkbook);
