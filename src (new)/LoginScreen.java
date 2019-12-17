@@ -100,7 +100,7 @@ public class LoginScreen {
 						public void run() {
 							try {
 								dashBoard window = new dashBoard();
-								window.frame1.setVisible(true);
+								window.dashboardFrame.setVisible(true);
 							} catch (Exception e) {
 								e.printStackTrace();
 							}
