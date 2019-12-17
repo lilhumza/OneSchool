@@ -36,29 +36,15 @@ public class markbook implements TableModelListener, ItemListener{
 	JFrame frame;
 	JScrollPane SPMarkbook = new JScrollPane();
 	JComboBox comboBox = new JComboBox();
-	JLabel lblNewLabel_1 = new JLabel("");
+	JLabel MarkBookTitle = new JLabel("");
 
-	/**
-	 * Launch the application.
-	 */
-
-	/**
-	 * Create the application.
-	 * @wbp.parser.entryPoint
-	 */
-	public markbook() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
+	//method that makes a layout for a markbook table, including adding fonts and colors
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(UIManager.getColor("Tree.background"));
 		frame.setBounds(100,100,1000,500);
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); 
-		lblNewLabel_1.setText(marksTable.calsses[0]);
+		MarkBookTitle.setText(marksTable.calsses[0]);
 		
 		JPanel classXMarkbook = new JPanel();
 		classXMarkbook.setBackground(Color.WHITE);
@@ -91,17 +77,17 @@ public class markbook implements TableModelListener, ItemListener{
 					.addComponent(SPMarkbook, GroupLayout.PREFERRED_SIZE, 395, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
-		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		MarkBookTitle.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		comboBox.setFont(new Font("Times New Roman", Font.PLAIN, 9));
 		
 		comboBox.setModel(new DefaultComboBoxModel(marksTable.calsses));
-		SimpleTableDemo1(comboBox);
+		detectCBChanges(comboBox);
 		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
 		gl_panel_2.setHorizontalGroup(
 			gl_panel_2.createParallelGroup(Alignment.TRAILING)
 				.addGroup(Alignment.LEADING, gl_panel_2.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(lblNewLabel_1)
+					.addComponent(MarkBookTitle)
 					.addPreferredGap(ComponentPlacement.RELATED, 816, Short.MAX_VALUE)
 					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
@@ -110,7 +96,7 @@ public class markbook implements TableModelListener, ItemListener{
 			gl_panel_2.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_2.createSequentialGroup()
 					.addGap(19)
-					.addComponent(lblNewLabel_1)
+					.addComponent(MarkBookTitle)
 					.addContainerGap(39, Short.MAX_VALUE))
 				.addGroup(Alignment.TRAILING, gl_panel_2.createSequentialGroup()
 					.addContainerGap(31, Short.MAX_VALUE)
@@ -127,14 +113,16 @@ public class markbook implements TableModelListener, ItemListener{
 		frame.getContentPane().setLayout(groupLayout);
 	}
 	
+	//method that creates a table listener that reacts when there is a change made to the table
 	public void SimpleTableDemo(JTable table) {
         table.getModel().addTableModelListener(this);
     }
-	
-	public void SimpleTableDemo1(JComboBox table) {
+	//method that creates a item listener that reacts when there is a change made to the combobox
+	public void detectCBChanges(JComboBox table) {
 		comboBox.addItemListener(this);
     }
-
+	//tableChanged is activated when there is a change in the table, it gets the new changed mark and 
+	//recalculates the average and adds it to the Calculated Marks coloum
 	public void tableChanged(TableModelEvent e) {
 		 int row = e.getFirstRow();
 	     int column = e.getColumn();
@@ -149,12 +137,12 @@ public class markbook implements TableModelListener, ItemListener{
 	     SimpleTableDemo(marksTable.table);
 		
 	}
-	
+	//Activates when there is a change in the comboBox and changes the title to the new value
 	public void itemStateChanged(ItemEvent e) 
     { 
         if (e.getSource() == comboBox) { 
   
-        	lblNewLabel_1.setText((String) comboBox.getSelectedItem()); 
+        	MarkBookTitle.setText((String) comboBox.getSelectedItem()); 
         } 
     } 
 }
