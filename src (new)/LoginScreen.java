@@ -82,7 +82,7 @@ public class LoginScreen {
 		lblWelcomeToOneskool.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblWelcomeToOneskool.setBounds(345, 29, 220, 31);
 		loginScreen.getContentPane().add(lblWelcomeToOneskool);
-		
+
 		//Links the log in screen to the dashboard once you sign in 
 		JButton btnLogIn = new JButton("Log in");
 		btnLogIn.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -115,15 +115,17 @@ public class LoginScreen {
 		btnLogIn.setBounds(384, 244, 89, 23);
 		loginScreen.getContentPane().add(btnLogIn);
 		
+		//When you click the button you stay logged in even if you close the application
 		JCheckBox chckbxKeepMeLogged = new JCheckBox("Keep me logged on");
 		chckbxKeepMeLogged.setBounds(315, 214, 158, 23);
 		loginScreen.getContentPane().add(chckbxKeepMeLogged);
-		
+	
 		JLabel lblDontHaveAn = new JLabel("Dont have an account?");
 		lblDontHaveAn.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblDontHaveAn.setBounds(298, 307, 158, 14);
 		loginScreen.getContentPane().add(lblDontHaveAn);
 		
+		//When clicked a screen will pop up to create an account	
 		JButton btnSignUp = new JButton("Sign Up!");
 		btnSignUp.setBounds(466, 305, 89, 23);
 		loginScreen.getContentPane().add(btnSignUp);
