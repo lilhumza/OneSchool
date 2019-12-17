@@ -13,30 +13,26 @@ public class InventoryTable {
 
 	static JTable table;
 	static JScrollPane SPMarkbook;
-
-	static String[][] marks = {
+	//Sample layout for the items inside the inventory table
+	static String[][] inventoryData = {
 			{"Beaker", "1234", "Alot", "InStock"},
 			{"Ball", "4321", "Alot", "InStock"},
 			{"STUFF", "#####", "Alot", "InStock"},
 			
 	};
-	public static String[] locations = {
+	//Sample layout for tables's headers
+	public static String[] headers = {
 		" ", "Item#", "Quantity", "Status"
 	};
-	public static String[] calsses = {
+	//Different Inventory Areas
+	public static String[] iventoryCatagory = {
 			"Gym Inventory", "Science Inventory", "ChromeBook Inventory"
 		};
 	public static void displayTable(JScrollPane SP) {
 		SPMarkbook = SP;
-		createTable(SP, marks, locations);
-		
+		createTable(SP, inventoryData, headers);
 	}
-
-
-	
-	/**
-	 * @wbp.parser.entryPoint
-	 */
+	//Creats the table and sets the coloum and row height and widths
 	public static void createTable(JScrollPane scrollPane, String[][] coloums, String[] rows) {
 		table = new JTable();
 		table.setFont(new Font("Times New Roman", Font.PLAIN, 15));
@@ -61,6 +57,7 @@ public class InventoryTable {
 		scrollPane.setViewportView(table);
 		
 	}
+	//Detects Changes inside the comboBox and returns the new value
 	public static String checkComboBoxChange(JComboBox cb, JLabel lbl) {
 		return (String) cb.getSelectedItem();
 	}
