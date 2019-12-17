@@ -83,6 +83,7 @@ public class LoginScreen {
 		lblWelcomeToOneskool.setBounds(345, 29, 220, 31);
 		loginScreen.getContentPane().add(lblWelcomeToOneskool);
 		
+		//Links the log in screen to the dashboard once you sign in 
 		JButton btnLogIn = new JButton("Log in");
 		btnLogIn.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnLogIn.addActionListener(new ActionListener() {
