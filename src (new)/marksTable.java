@@ -12,9 +12,10 @@ public class marksTable {
 
 	static JTable table;
 	static JScrollPane SPMarkbook;
-	static String[][] marks = {
-			{"A", "70", "50", "50", "50", "50", "0", "0", "0", "0", "0", "0"},
-			{"A", "70", "50", "50", "50", "50", "0", "0", "0", "0", "0", "0"},
+	//Sample layout for the marks 2d array, which includes student names + their marks
+	static String[][] marks = {																 
+			{"A", "70", "50", "50", "50", "50", "0", "0", "0", "0", "0", "0"},				
+			{"A", "70", "50", "50", "50", "50", "0", "0", "0", "0", "0", "0"},		
 			{"A", "70", "50", "50", "50", "50", "0", "0", "0", "0", "0", "0"},
 			{"A", "70", "50", "50", "50", "50", "0", "0", "0", "0", "0", "0"},
 			{"A", "70", "50", "50", "50", "50", "0", "0", "0", "0", "0", "0"},
@@ -37,18 +38,24 @@ public class marksTable {
 			{"A", "70", "50", "50", "50", "50", "0", "0", "0", "0", "0", "0"},
 			
 	};
+	//Sample layout for the headers, which includes user inputed assignments
 	public static String[] assignments = {
 		" ", "Assignment1", "Assignment1","Assignment1", "Assignment1", "Assignment1", "Calculated Marks"
+	};	
+	//Sample layout for the combobox, which includes user inputed classes
+	public static String[] calsses = {																		
+			"ICS4U0", "SCH4U0", "MHF4U0"																	
 	};
-	public static String[] calsses = {
-			"ICS4U0", "SCH4U0", "MHF4U0"
-		};
+	//Method to add all data to the table
 	public static void displayTable(JScrollPane SP) {
 		SPMarkbook = SP;
 		createTable(SP, marks, assignments);
 		
 	}
-	
+	/* Calculate marks method takes in the String array marks
+	 * goes through each individual student marks and calculates
+	 * the marks based on the number of assignments.
+	 */
 	public static void calculateMark(String[][] marks) {
 		int total = 0;
 		for(int i = 0; i < marks.length; i++) {
@@ -61,8 +68,9 @@ public class marksTable {
 	}
 
 	
-	/**
-	 * @wbp.parser.entryPoint
+	/* This method creates a table using the data from coloums (Student Names + Marks) and rows (Headers)
+	 * Also sets fonts for text inside the table
+	 * Finally, adds the table to the given scrollPane parameter
 	 */
 	public static void createTable(JScrollPane scrollPane, String[][] coloums, String[] rows) {
 		table = new JTable();
@@ -90,8 +98,4 @@ public class marksTable {
 		scrollPane.setViewportView(table);
 		
 	}
-	public static String checkComboBoxCange(JComboBox cb, JLabel lbl) {
-		return (String) cb.getSelectedItem();
-	}
-
 }
