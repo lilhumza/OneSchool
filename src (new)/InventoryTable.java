@@ -61,7 +61,7 @@ public class InventoryTable {
 		scrollPane.setViewportView(table);
 		
 	}
-	public static String checkComboBoxCange(JComboBox cb, JLabel lbl) {
+	public static String checkComboBoxChange(JComboBox cb, JLabel lbl) {
 		return (String) cb.getSelectedItem();
 	}
 
