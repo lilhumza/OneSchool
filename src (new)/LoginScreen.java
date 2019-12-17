@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 import javax.swing.JPasswordField;
-
+//Creates the log in screen
 public class LoginScreen {
 
 	public static JFrame loginScreen = new JFrame();
@@ -55,6 +55,7 @@ public class LoginScreen {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	//Displays the log in screen 
 	private void initialize() throws Exception{
 		loginScreen.setBounds(100, 100, 1000, 500);
 		loginScreen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
