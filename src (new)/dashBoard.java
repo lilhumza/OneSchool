@@ -1,18 +1,13 @@
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Component;
 import java.awt.ComponentOrientation;
-import javax.swing.JTextArea;
-import javax.swing.JButton;
+import javax.swing.border.Border;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
@@ -61,15 +56,6 @@ public class dashBoard {
 		btnMarkBook.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-			}
-		});
-		btnMarkBook.setFont(new Font("Times New Roman", Font.BOLD, 12));
-		btnMarkBook.setBounds(19, 156, 115, 29);
-		navPanel.add(btnMarkBook);
-		
-		JButton btnGymInventory = new JButton("GYM Inventory");
-		btnGymInventory.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
@@ -82,14 +68,44 @@ public class dashBoard {
 				});
 			}
 		});
+		btnMarkBook.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		btnMarkBook.setBounds(19, 156, 115, 29);
+		navPanel.add(btnMarkBook);
+		btnMarkBook.setForeground(Color.WHITE);
+		btnMarkBook.setBackground(Color.DARK_GRAY);
+		Border emptyBorder = BorderFactory.createEmptyBorder();
+		btnMarkBook.setBorder(emptyBorder);
+		btnMarkBook.setFocusPainted(false);
+
+		
+		JButton btnGymInventory = new JButton("GYM Inventory");
+		btnGymInventory.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Inventory InventoryWindow = new Inventory();
+							InventoryWindow.frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
 		btnGymInventory.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 			}
 		});
-		btnGymInventory.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		btnGymInventory.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		btnGymInventory.setBounds(18, 237, 115, 29);
 		navPanel.add(btnGymInventory);
+		btnGymInventory.setForeground(Color.WHITE);
+		btnGymInventory.setBackground(Color.DARK_GRAY);
+		btnGymInventory.setBorder(emptyBorder);
+		btnGymInventory.setFocusPainted(false);
 		
 		JButton btnScienceInventory = new JButton("SNC Inventory");
 		btnScienceInventory.addMouseListener(new MouseAdapter() {
@@ -97,9 +113,13 @@ public class dashBoard {
 			public void mouseClicked(MouseEvent e) {
 			}
 		});
-		btnScienceInventory.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		btnScienceInventory.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		btnScienceInventory.setBounds(19, 321, 115, 29);
 		navPanel.add(btnScienceInventory);
+		btnScienceInventory.setForeground(Color.WHITE);
+		btnScienceInventory.setBackground(Color.DARK_GRAY);
+		btnScienceInventory.setBorder(emptyBorder);
+		btnScienceInventory.setFocusPainted(false);
 		
 		JButton btnAttendance = new JButton("Attendance");
 		btnAttendance.addMouseListener(new MouseAdapter() {
@@ -107,9 +127,13 @@ public class dashBoard {
 			public void mouseClicked(MouseEvent e) {
 			}
 		});
-		btnAttendance.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		btnAttendance.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		btnAttendance.setBounds(19, 76, 115, 29);
 		navPanel.add(btnAttendance);
+		btnAttendance.setForeground(Color.WHITE);
+		btnAttendance.setBackground(Color.DARK_GRAY);
+		btnAttendance.setBorder(emptyBorder);
+		btnAttendance.setFocusPainted(false);
 		
 		JButton btnLogOut = new JButton("Log Out");
 		btnLogOut.addMouseListener(new MouseAdapter() {
@@ -117,9 +141,13 @@ public class dashBoard {
 			public void mouseClicked(MouseEvent e) {
 			}
 		});
-		btnLogOut.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		btnLogOut.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		btnLogOut.setBounds(19, 392, 115, 29);
 		navPanel.add(btnLogOut);
+		btnLogOut.setForeground(Color.WHITE);
+		btnLogOut.setBackground(Color.DARK_GRAY);
+		btnLogOut.setBorder(emptyBorder);
+		btnLogOut.setFocusPainted(false);
 		
 		JPanel attendancePanel = new JPanel();
 		attendancePanel.setBounds(192, 250, 165, 165);
