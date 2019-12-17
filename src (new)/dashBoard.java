@@ -20,7 +20,7 @@ import java.awt.event.MouseEvent;
 
 public class dashBoard {
 
-	private JFrame frame;
+	private JFrame dashboardFrame;
 	private JLabel lblWelcome;
 
 	/**
@@ -31,7 +31,7 @@ public class dashBoard {
 			public void run() {
 				try {
 					dashBoard window = new dashBoard();
-					window.frame.setVisible(true);
+					window.dashboardFrame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -51,17 +51,17 @@ public class dashBoard {
 	 */
 	private void initialize() {
 		//Create JFrame
-		frame = new JFrame();
-		frame.getContentPane().setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
-		frame.setBounds(100, 100, 1000, 500);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		dashboardFrame = new JFrame();
+		dashboardFrame.getContentPane().setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		dashboardFrame.setBounds(100, 100, 1000, 500);
+		dashboardFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		dashboardFrame.getContentPane().setLayout(null);
 		
 		//Create and design the NavBar area
 		JPanel navPanel = new JPanel();
 		navPanel.setBounds(0, 0, 160, 455);
 		navPanel.setBackground(Color.DARK_GRAY);
-		frame.getContentPane().add(navPanel);
+		dashboardFrame.getContentPane().add(navPanel);
 		navPanel.setLayout(null);
 		
 		//Menu label for NavBar
@@ -131,7 +131,7 @@ public class dashBoard {
 		JPanel attendancePanel = new JPanel();
 		attendancePanel.setBounds(192, 250, 165, 165);
 		attendancePanel.setBackground(Color.LIGHT_GRAY);
-		frame.getContentPane().add(attendancePanel);
+		dashboardFrame.getContentPane().add(attendancePanel);
 		attendancePanel.setLayout(null);
 		
 		//Attendance Metric Label
@@ -152,7 +152,7 @@ public class dashBoard {
 		JPanel gymPanel = new JPanel();
 		gymPanel.setBounds(390, 250, 165, 165);
 		gymPanel.setBackground(Color.GRAY);
-		frame.getContentPane().add(gymPanel);
+		dashboardFrame.getContentPane().add(gymPanel);
 		gymPanel.setLayout(null);
 		
 		//Gym Equipment Metric Label
@@ -172,7 +172,7 @@ public class dashBoard {
 		JPanel sncPanel = new JPanel();
 		sncPanel.setBounds(582, 250, 165, 165);
 		sncPanel.setBackground(Color.DARK_GRAY);
-		frame.getContentPane().add(sncPanel);
+		dashboardFrame.getContentPane().add(sncPanel);
 		sncPanel.setLayout(null);
 		
 		//SNC Equipment Metric Label
@@ -193,7 +193,7 @@ public class dashBoard {
 		JPanel datePanel = new JPanel();
 		datePanel.setBounds(776, 250, 165, 165);
 		datePanel.setBackground(Color.BLACK);
-		frame.getContentPane().add(datePanel);
+		dashboardFrame.getContentPane().add(datePanel);
 		datePanel.setLayout(null);
 		
 		//Date Label
@@ -217,7 +217,7 @@ public class dashBoard {
 		lblWelcome.setFont(new Font("Tahoma", Font.BOLD, 22));
 		lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWelcome.setBackground(Color.DARK_GRAY);
-		frame.getContentPane().add(lblWelcome);
+		dashboardFrame.getContentPane().add(lblWelcome);
 		
 		//Welcome Section TextArea
 		JTextArea txtrWelcome = new JTextArea();
@@ -227,7 +227,7 @@ public class dashBoard {
 		txtrWelcome.setWrapStyleWord(true);
 		txtrWelcome.setText("OneSchool is an intuituve solution for teachers to quickly access and manage related items to students in their respective classes. Included options are Attendance, Markbook and Inventories for the GYM and Science Depts. ");
 		txtrWelcome.setBounds(192, 94, 363, 140);
-		frame.getContentPane().add(txtrWelcome);
+		dashboardFrame.getContentPane().add(txtrWelcome);
 		
 		//Private Notes TextArea
 		JTextArea txtrPrivateNotes = new JTextArea();
@@ -235,6 +235,6 @@ public class dashBoard {
 		txtrPrivateNotes.setLineWrap(true);
 		txtrPrivateNotes.setText("Private Notes: ");
 		txtrPrivateNotes.setBounds(582, 45, 359, 190);
-		frame.getContentPane().add(txtrPrivateNotes);
+		dashboardFrame.getContentPane().add(txtrPrivateNotes);
 	}
 }
