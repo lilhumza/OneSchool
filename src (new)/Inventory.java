@@ -1,4 +1,4 @@
-import java.awt.EventQueue;
+import java.awt.*;
 
 import javax.swing.JFrame;
 import javax.swing.BorderFactory;
@@ -6,11 +6,8 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import java.awt.Color;
-import java.awt.Dimension;
 
 import javax.swing.JPanel;
-import java.awt.Font;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.UIManager;
@@ -19,7 +16,6 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
 
-import java.awt.SystemColor;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -33,7 +29,7 @@ import javax.swing.DefaultComboBoxModel;
 
 public class Inventory implements TableModelListener, ItemListener{
 
-	private JFrame frame;
+	public JFrame frame;
 	JScrollPane SPMarkbook = new JScrollPane();
 	JComboBox comboBox = new JComboBox();
 	JLabel lblNewLabel_1 = new JLabel("");
@@ -41,18 +37,6 @@ public class Inventory implements TableModelListener, ItemListener{
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Inventory InventoryWindow = new Inventory();
-					InventoryWindow.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
@@ -69,7 +53,7 @@ public class Inventory implements TableModelListener, ItemListener{
 		frame = new JFrame();
 		frame.getContentPane().setBackground(UIManager.getColor("Tree.background"));
 		frame.setBounds(100,100,1000,500);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		lblNewLabel_1.setText(InventoryTable.calsses[0]);
 		
 		JPanel classXMarkbook = new JPanel();
