@@ -37,6 +37,10 @@ public class markbook implements TableModelListener, ItemListener{
 	JScrollPane SPMarkbook = new JScrollPane();
 	JComboBox comboBox = new JComboBox();
 	JLabel MarkBookTitle = new JLabel("");
+	
+	public markbook() {
+		initialize();
+	}
 
 	//method that makes a layout for a markbook table, including adding fonts and colors
 	private void initialize() {
