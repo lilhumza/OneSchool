@@ -33,18 +33,21 @@ public class dashBoard {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		//JFrame declaration and setup
 		dashboardFrame = new JFrame();
 		dashboardFrame.getContentPane().setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 		dashboardFrame.setBounds(100, 100, 1000, 500);
 		dashboardFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		dashboardFrame.getContentPane().setLayout(null);
 		
+		//JPanel for NavBar declaration and setup
 		JPanel navPanel = new JPanel();
 		navPanel.setBounds(0, 0, 160, 455);
 		navPanel.setBackground(Color.DARK_GRAY);
 		dashboardFrame.getContentPane().add(navPanel);
 		navPanel.setLayout(null);
 		
+		//JLabel for navBar Title declaration and setup
 		JLabel lblMenu = new JLabel("Menu");
 		lblMenu.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMenu.setBounds(28, 3, 106, 57);
@@ -52,6 +55,7 @@ public class dashBoard {
 		lblMenu.setForeground(Color.WHITE);
 		navPanel.add(lblMenu);
 		
+		//JButton for navBar MarkBook button declaration and setup
 		JButton btnMarkBook = new JButton("Mark Book");
 		btnMarkBook.addMouseListener(new MouseAdapter() {
 			@Override
@@ -77,7 +81,7 @@ public class dashBoard {
 		btnMarkBook.setBorder(emptyBorder);
 		btnMarkBook.setFocusPainted(false);
 
-		
+		//JButton for navBar GYM Inventory button declaration and setup
 		JButton btnGymInventory = new JButton("GYM Inventory");
 		btnGymInventory.addActionListener(new ActionListener() {
 			@Override
@@ -107,6 +111,7 @@ public class dashBoard {
 		btnGymInventory.setBorder(emptyBorder);
 		btnGymInventory.setFocusPainted(false);
 		
+		//JButton for navBar SNC Inventory button declaration and setup
 		JButton btnScienceInventory = new JButton("SNC Inventory");
 		btnScienceInventory.addMouseListener(new MouseAdapter() {
 			@Override
@@ -121,6 +126,7 @@ public class dashBoard {
 		btnScienceInventory.setBorder(emptyBorder);
 		btnScienceInventory.setFocusPainted(false);
 		
+		//JButton for navBar attendance button declaration and setup
 		JButton btnAttendance = new JButton("Attendance");
 		btnAttendance.addMouseListener(new MouseAdapter() {
 			@Override
@@ -135,6 +141,7 @@ public class dashBoard {
 		btnAttendance.setBorder(emptyBorder);
 		btnAttendance.setFocusPainted(false);
 		
+		//JButton for navBar Log Out button declaration and setup
 		JButton btnLogOut = new JButton("Log Out");
 		btnLogOut.addMouseListener(new MouseAdapter() {
 			@Override
@@ -149,86 +156,117 @@ public class dashBoard {
 		btnLogOut.setBorder(emptyBorder);
 		btnLogOut.setFocusPainted(false);
 		
+		//Quick Stats - Attendance Metric
 		JPanel attendancePanel = new JPanel();
 		attendancePanel.setBounds(192, 250, 165, 165);
 		attendancePanel.setBackground(Color.LIGHT_GRAY);
-		dashboardFrame.getContentPane().add(attendancePanel);
+		frame.getContentPane().add(attendancePanel);
 		attendancePanel.setLayout(null);
 		
-		JLabel label = new JLabel("16/29");
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setBounds(0, 0, 165, 165);
-		label.setFont(new Font("Times New Roman", Font.PLAIN, 40));
-		attendancePanel.add(label);
+		//Attendance Metric Label
+		JLabel lblAttendance = new JLabel("16/29");
+		lblAttendance.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAttendance.setBounds(0, 0, 165, 165);
+		lblAttendance.setFont(new Font("Times New Roman", Font.PLAIN, 40));
+		attendancePanel.add(lblAttendance);
 		
+		//Present Label
 		JLabel lblPresent = new JLabel("Present");
 		lblPresent.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 		lblPresent.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPresent.setBounds(25, 129, 125, 20);
 		attendancePanel.add(lblPresent);
 		
+		//Quick Stats - Gym Inventory
 		JPanel gymPanel = new JPanel();
 		gymPanel.setBounds(390, 250, 165, 165);
 		gymPanel.setBackground(Color.GRAY);
-		dashboardFrame.getContentPane().add(gymPanel);
+		frame.getContentPane().add(gymPanel);
 		gymPanel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("17/32");
-		lblNewLabel.setBounds(0, 0, 165, 165);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 40));
-		gymPanel.add(lblNewLabel);
+		//Gym Equipment Metric Label
+		JLabel lblGymLabel = new JLabel("17/32");
+		lblGymLabel.setBounds(0, 0, 165, 165);
+		lblGymLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblGymLabel.setFont(new Font("Times New Roman", Font.PLAIN, 40));
+		gymPanel.add(lblGymLabel);
 		
+		//Gym Equipment Label
 		JLabel lblGymEquip = new JLabel("GYM Equipment");
 		lblGymEquip.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 		lblGymEquip.setBounds(15, 129, 135, 20);
 		gymPanel.add(lblGymEquip);
 		
+		//Quick Stats - SNC Inventory
 		JPanel sncPanel = new JPanel();
 		sncPanel.setBounds(582, 250, 165, 165);
 		sncPanel.setBackground(Color.DARK_GRAY);
-		dashboardFrame.getContentPane().add(sncPanel);
+		frame.getContentPane().add(sncPanel);
 		sncPanel.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("ZERO");
-		lblNewLabel_1.setBounds(0, 0, 165, 165);
-		lblNewLabel_1.setFont(new Font("Times New Roman", Font.PLAIN, 40));
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		sncPanel.add(lblNewLabel_1);
+		//SNC Equipment Metric Label
+		JLabel lblSncLabel = new JLabel("ZERO");
+		lblSncLabel.setBounds(0, 0, 165, 165);
+		lblSncLabel.setFont(new Font("Times New Roman", Font.PLAIN, 40));
+		lblSncLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		sncPanel.add(lblSncLabel);
 		
+		//SNC Equipment Label
 		JLabel lblSncEquipment = new JLabel("SNC Equipment");
 		lblSncEquipment.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSncEquipment.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 		lblSncEquipment.setBounds(15, 129, 135, 20);
 		sncPanel.add(lblSncEquipment);
 		
+		//Quick Stats - Date & Time
 		JPanel datePanel = new JPanel();
 		datePanel.setBounds(776, 250, 165, 165);
 		datePanel.setBackground(Color.BLACK);
-		dashboardFrame.getContentPane().add(datePanel);
+		frame.getContentPane().add(datePanel);
 		datePanel.setLayout(null);
 		
-		JLabel lblDec = new JLabel("10 DEC");
-		lblDec.setBounds(0, 0, 165, 165);
-		lblDec.setHorizontalAlignment(SwingConstants.CENTER);
-		lblDec.setFont(new Font("Times New Roman", Font.PLAIN, 40));
-		lblDec.setForeground(Color.WHITE);
-		datePanel.add(lblDec);
 		
-		JLabel lblPm = new JLabel("1:42 PM");
-		lblPm.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-		lblPm.setForeground(Color.WHITE);
-		lblPm.setBounds(51, 129, 69, 20);
-		datePanel.add(lblPm);
-		//txtPrivateNotes.setColumns(10);
+		Date date = new Date();
+	   	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd");
+	    	String day = simpleDateFormat.format(date);
+	    	simpleDateFormat = new SimpleDateFormat("MMM");
+	    	String month = simpleDateFormat.format(date).toUpperCase();
+	    	String outPut = day +" "+ month;
 		
+		//Date Label
+		JLabel lblDate = new JLabel(outPut);
+		lblDate.setBounds(0, 0, 165, 165);
+		lblDate.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDate.setFont(new Font("Times New Roman", Font.PLAIN, 40));
+		lblDate.setForeground(Color.WHITE);
+		datePanel.add(lblDate);
+		
+		//Time Label
+		JLabel lblTime = new JLabel();
+		lblTime.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+		lblTime.setForeground(Color.WHITE);
+		lblTime.setBounds(51, 129, 69, 20);
+		datePanel.add(lblTime);
+		
+		Timer SimpleTimer = new Timer(45, new ActionListener(){
+		    @Override
+		    public void actionPerformed(ActionEvent e) {
+		    	SimpleDateFormat formatDate = new SimpleDateFormat("h:mm a");
+			    String dateString = formatDate.format(new Date()).toString();
+				lblTime.setText(dateString);
+		    }
+		});
+		SimpleTimer.start();	
+		
+		//Welcome Label
 		lblWelcome = new JLabel("Welcome to OneSchool");
 		lblWelcome.setBounds(192, 45, 300, 45);
 		lblWelcome.setFont(new Font("Tahoma", Font.BOLD, 22));
 		lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWelcome.setBackground(Color.DARK_GRAY);
-		dashboardFrame.getContentPane().add(lblWelcome);
+		frame.getContentPane().add(lblWelcome);
 		
+		//Welcome Section TextArea
 		JTextArea txtrWelcome = new JTextArea();
 		txtrWelcome.setBackground(Color.WHITE);
 		txtrWelcome.setFont(new Font("Times New Roman", Font.PLAIN, 18));
@@ -236,13 +274,14 @@ public class dashBoard {
 		txtrWelcome.setWrapStyleWord(true);
 		txtrWelcome.setText("OneSchool is an intuituve solution for teachers to quickly access and manage related items to students in their respective classes. Included options are Attendance, Markbook and Inventories for the GYM and Science Depts. ");
 		txtrWelcome.setBounds(192, 94, 363, 140);
-		dashboardFrame.getContentPane().add(txtrWelcome);
+		frame.getContentPane().add(txtrWelcome);
 		
+		//Private Notes TextArea
 		JTextArea txtrPrivateNotes = new JTextArea();
 		txtrPrivateNotes.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		txtrPrivateNotes.setLineWrap(true);
 		txtrPrivateNotes.setText("Private Notes: ");
 		txtrPrivateNotes.setBounds(582, 45, 359, 190);
-		dashboardFrame.getContentPane().add(txtrPrivateNotes);
+		frame.getContentPane().add(txtrPrivateNotes);
 	}
 }
