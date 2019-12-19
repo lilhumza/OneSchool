@@ -20,12 +20,30 @@ public class InventoryTable {
 			{"STUFF", "#####", "Alot", "InStock"},
 			
 	};
+	static String[][] gymInv = {
+			{"Ball", "1234", "Alot", "InStock"},
+			{"Ball", "4321", "Alot", "InStock"},
+			{"Ball", "#####", "Alot", "InStock"},
+			
+	};
+	static String[][] sncInv = {
+			{"Beaker", "1234", "Alot", "InStock"},
+			{"Beaker", "4321", "Alot", "InStock"},
+			{"Beaker", "#####", "Alot", "InStock"},
+			
+	};
+	static String[][] cbInv = {
+			{"CB", "2", "1", "InStock"},
+			{"CB", "3", "1", "Out"},
+			{"CB", "#####", "1", "InStock"},
+			
+	};
 	//Sample layout for tables's headers
 	public static String[] headers = {
 		" ", "Item#", "Quantity", "Status"
 	};
 	//Different Inventory Areas
-	public static String[] iventoryCatagory = {
+	public static String[] inventoryCatagory = {
 			"Gym Inventory", "Science Inventory", "ChromeBook Inventory"
 		};
 	public static void displayTable(JScrollPane SP) {
