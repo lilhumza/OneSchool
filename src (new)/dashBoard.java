@@ -52,7 +52,7 @@ public class dashBoard {
 		//JLabel for navBar Title declaration and setup
 		JLabel lblMenu = new JLabel("Menu");
 		lblMenu.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMenu.setBounds(28, 3, 106, 57);
+		lblMenu.setBounds(19, 0, 106, 57);
 		lblMenu.setFont(new Font("Times New Roman", Font.BOLD, 30));
 		lblMenu.setForeground(Color.WHITE);
 		navPanel.add(lblMenu);
@@ -75,7 +75,7 @@ public class dashBoard {
 			}
 		});
 		btnMarkBook.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		btnMarkBook.setBounds(19, 185, 115, 29);
+		btnMarkBook.setBounds(19, 182, 115, 29);
 		navPanel.add(btnMarkBook);
 		btnMarkBook.setForeground(Color.WHITE);
 		btnMarkBook.setBackground(Color.DARK_GRAY);
@@ -91,7 +91,7 @@ public class dashBoard {
 			}
 		});
 		btnAttendance.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		btnAttendance.setBounds(19, 105, 115, 29);
+		btnAttendance.setBounds(19, 142, 115, 29);
 		navPanel.add(btnAttendance);
 		btnAttendance.setForeground(Color.WHITE);
 		btnAttendance.setBackground(Color.DARK_GRAY);
@@ -133,7 +133,7 @@ public class dashBoard {
 		btnInventory.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		btnInventory.setFocusPainted(false);
 		btnInventory.setBackground(Color.DARK_GRAY);
-		btnInventory.setBounds(19, 271, 115, 29);
+		btnInventory.setBounds(19, 222, 115, 29);
 		navPanel.add(btnInventory);
 		
 		//Quick Stats - Attendance Metric
@@ -242,7 +242,7 @@ public class dashBoard {
 		
 		//Welcome Label
 		lblWelcome = new JLabel("Welcome to OneSchool");
-		lblWelcome.setBounds(192, 45, 300, 45);
+		lblWelcome.setBounds(186, 0, 300, 45);
 		lblWelcome.setFont(new Font("Tahoma", Font.BOLD, 22));
 		lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWelcome.setBackground(Color.DARK_GRAY);
@@ -255,7 +255,7 @@ public class dashBoard {
 		txtrWelcome.setLineWrap(true);
 		txtrWelcome.setWrapStyleWord(true);
 		txtrWelcome.setText("OneSchool is an intuituve solution for teachers to quickly access and manage related items to students in their respective classes. Included options are Attendance, Markbook and Inventories for the GYM and Science Depts. ");
-		txtrWelcome.setBounds(192, 94, 363, 140);
+		txtrWelcome.setBounds(192, 45, 363, 194);
 		txtrWelcome.setEditable(false);
 		dashboardFrame.getContentPane().add(txtrWelcome);
 		
