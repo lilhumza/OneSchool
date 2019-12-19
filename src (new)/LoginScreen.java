@@ -115,11 +115,6 @@ public class LoginScreen {
 		});
 		btnLogIn.setBounds(384, 244, 89, 23);
 		loginScreen.getContentPane().add(btnLogIn);
-		
-		//When you click the button you stay logged in even if you close the application
-		JCheckBox chckbxKeepMeLogged = new JCheckBox("Keep me logged on");
-		chckbxKeepMeLogged.setBounds(315, 214, 158, 23);
-		loginScreen.getContentPane().add(chckbxKeepMeLogged);
 	
 		JLabel lblDontHaveAn = new JLabel("Dont have an account?");
 		lblDontHaveAn.setFont(new Font("Tahoma", Font.PLAIN, 15));
