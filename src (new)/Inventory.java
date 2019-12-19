@@ -156,7 +156,7 @@ public class Inventory implements TableModelListener, ItemListener{
         		InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.sncInv, InventoryTable.inventoryCatagory);
        	     	SimpleTableDemo(InventoryTable.table);
         	}
-        	if(comboBox.getSelectedItem() == "Science Inventory"){
+        	if(comboBox.getSelectedItem() == "ChromeBook Inventory"){
         		InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.cbInv, InventoryTable.inventoryCatagory);
        	     	SimpleTableDemo(InventoryTable.table);
         	}
