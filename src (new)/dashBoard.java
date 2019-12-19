@@ -75,58 +75,13 @@ public class dashBoard {
 			}
 		});
 		btnMarkBook.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		btnMarkBook.setBounds(19, 156, 115, 29);
+		btnMarkBook.setBounds(19, 185, 115, 29);
 		navPanel.add(btnMarkBook);
 		btnMarkBook.setForeground(Color.WHITE);
 		btnMarkBook.setBackground(Color.DARK_GRAY);
 		Border emptyBorder = BorderFactory.createEmptyBorder();
 		btnMarkBook.setBorder(emptyBorder);
 		btnMarkBook.setFocusPainted(false);
-
-		//JButton for navBar GYM Inventory button declaration and setup
-		JButton btnGymInventory = new JButton("GYM Inventory");
-		btnGymInventory.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							Inventory InventoryWindow = new Inventory();
-							InventoryWindow.frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
-			}
-		});
-		btnGymInventory.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-			}
-		});
-		btnGymInventory.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		btnGymInventory.setBounds(18, 237, 115, 29);
-		navPanel.add(btnGymInventory);
-		btnGymInventory.setForeground(Color.WHITE);
-		btnGymInventory.setBackground(Color.DARK_GRAY);
-		btnGymInventory.setBorder(emptyBorder);
-		btnGymInventory.setFocusPainted(false);
-		
-		//JButton for navBar SNC Inventory button declaration and setup
-		JButton btnScienceInventory = new JButton("SNC Inventory");
-		btnScienceInventory.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-			}
-		});
-		btnScienceInventory.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		btnScienceInventory.setBounds(19, 321, 115, 29);
-		navPanel.add(btnScienceInventory);
-		btnScienceInventory.setForeground(Color.WHITE);
-		btnScienceInventory.setBackground(Color.DARK_GRAY);
-		btnScienceInventory.setBorder(emptyBorder);
-		btnScienceInventory.setFocusPainted(false);
 		
 		//JButton for navBar attendance button declaration and setup
 		JButton btnAttendance = new JButton("Attendance");
@@ -136,7 +91,7 @@ public class dashBoard {
 			}
 		});
 		btnAttendance.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		btnAttendance.setBounds(19, 76, 115, 29);
+		btnAttendance.setBounds(19, 105, 115, 29);
 		navPanel.add(btnAttendance);
 		btnAttendance.setForeground(Color.WHITE);
 		btnAttendance.setBackground(Color.DARK_GRAY);
@@ -157,6 +112,29 @@ public class dashBoard {
 		btnLogOut.setBackground(Color.DARK_GRAY);
 		btnLogOut.setBorder(emptyBorder);
 		btnLogOut.setFocusPainted(false);
+		
+		JButton btnInventory = new JButton("Inventory");
+		btnInventory.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Inventory InventoryWindow = new Inventory();
+							InventoryWindow.frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
+		btnInventory.setForeground(Color.WHITE);
+		btnInventory.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		btnInventory.setFocusPainted(false);
+		btnInventory.setBackground(Color.DARK_GRAY);
+		btnInventory.setBounds(19, 271, 115, 29);
+		navPanel.add(btnInventory);
 		
 		//Quick Stats - Attendance Metric
 		JPanel attendancePanel = new JPanel();
