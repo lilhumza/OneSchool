@@ -54,7 +54,7 @@ public class Inventory implements TableModelListener, ItemListener{
 		frame.getContentPane().setBackground(UIManager.getColor("Tree.background"));
 		frame.setBounds(100,100,1000,500);
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-		lblNewLabel_1.setText(InventoryTable.headers[0]);
+		lblNewLabel_1.setText(InventoryTable.inventoryCatagory[0]);
 		
 		JPanel classXMarkbook = new JPanel();
 		classXMarkbook.setBackground(Color.WHITE);
@@ -90,7 +90,7 @@ public class Inventory implements TableModelListener, ItemListener{
 		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		comboBox.setFont(new Font("Times New Roman", Font.PLAIN, 9));
 		
-		comboBox.setModel(new DefaultComboBoxModel(InventoryTable.headers));
+		comboBox.setModel(new DefaultComboBoxModel(InventoryTable.inventoryCatagory));
 		SimpleTableDemo1(comboBox);
 		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
 		gl_panel_2.setHorizontalGroup(
