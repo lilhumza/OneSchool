@@ -87,6 +87,7 @@ public class LoginScreen {
 		JButton btnLogIn = new JButton("Log in");
 		btnLogIn.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnLogIn.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent arg0) {
 				boolean verified = false;
 				try {
@@ -129,5 +130,21 @@ public class LoginScreen {
 		JButton btnSignUp = new JButton("Sign Up!");
 		btnSignUp.setBounds(466, 305, 89, 23);
 		loginScreen.getContentPane().add(btnSignUp);
-	}
+		btnSignUp.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							SignUp newAcc = new SignUp();
+							SignUp.frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
+		
+}
 }
