@@ -42,6 +42,9 @@ public class InventoryTable {
 	public static String[] headers = {
 		" ", "Item#", "Quantity", "Status"
 	};
+	public static String[] Cbheaders = {
+			" ", "Item#", "Quantity", "Status"
+		};
 	//Different Inventory Areas
 	public static String[] inventoryCatagory = {
 			"Gym Inventory", "Science Inventory", "ChromeBook Inventory"
