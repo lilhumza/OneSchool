@@ -54,7 +54,7 @@ public class Inventory implements TableModelListener, ItemListener{
 		frame.getContentPane().setBackground(UIManager.getColor("Tree.background"));
 		frame.setBounds(100,100,1000,500);
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-		lblNewLabel_1.setText(InventoryTable.inventoryCatagory[0]);
+		lblNewLabel_1.setText(InventoryTable.headers[0]);
 		
 		JPanel classXMarkbook = new JPanel();
 		classXMarkbook.setBackground(Color.WHITE);
@@ -147,8 +147,20 @@ public class Inventory implements TableModelListener, ItemListener{
 	public void itemStateChanged(ItemEvent e) 
     { 
         if (e.getSource() == comboBox) { 
-  
         	lblNewLabel_1.setText((String) comboBox.getSelectedItem()); 
+        	if(comboBox.getSelectedItem() == "Gym Inventory"){
+        		InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.gymInv, InventoryTable.inventoryCatagory);
+       	     	SimpleTableDemo(InventoryTable.table);
+        	}
+        	if(comboBox.getSelectedItem() == "Science Inventory"){
+        		InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.sncInv, InventoryTable.inventoryCatagory);
+       	     	SimpleTableDemo(InventoryTable.table);
+        	}
+        	if(comboBox.getSelectedItem() == "Science Inventory"){
+        		InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.cbInv, InventoryTable.inventoryCatagory);
+       	     	SimpleTableDemo(InventoryTable.table);
+        	}
+        	
         } 
     } 
 }
