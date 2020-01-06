@@ -5,8 +5,8 @@ import java.util.stream.IntStream;
 import static java.util.Arrays.asList;
 
 public class markPrediction {
-    private static final List<Integer> x = asList(1, 2, 3, 4, 5); // Consecutive hours developer codes
-    private static final List<Integer> y = asList(10, 20, 30, 40, 50); // Number of bugs produced
+    private static final List<Integer> x = asList(1, 2, 3, 4, 5);
+    private static final List<Integer> y = asList(10, 20, 30, 40, 50);
 
     private static Double predictForValue(int predictForDependentVariable) {
         if (x.size() != y.size())
