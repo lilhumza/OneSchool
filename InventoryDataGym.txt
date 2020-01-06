@@ -1,7 +1,7 @@
-- InvData (2d Array)
+- InvData (2d String Array)
 item1 item2 item3
 item1 item2 item3
 item1 item2 item3
 
-- header (1d Array)
+- header (1d String Array)
 header1 header2 header3
