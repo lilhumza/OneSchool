@@ -117,7 +117,7 @@ public class Inventory implements TableModelListener, ItemListener{
 		InventoryTable.displayTable(SPMarkbook);
 		classXMarkbook.setLayout(gl_classXMarkbook);
 		Border emptyBorder = BorderFactory.createEmptyBorder();
-		InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.inventoryData, InventoryTable.inventoryCatagory);
+		InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.inventoryData, InventoryTable.Cbheaders);
 	    SimpleTableDemo(InventoryTable.table);
 		frame.getContentPane().setLayout(groupLayout);
 	}
@@ -139,7 +139,7 @@ public class Inventory implements TableModelListener, ItemListener{
 
 	     Arrays.deepToString(InventoryTable.inventoryData);
 	     InventoryTable.inventoryData[row][column] = (String) data;
-	     InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.inventoryData, InventoryTable.inventoryCatagory);
+	     InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.inventoryData, InventoryTable.Cbheaders);
 	     SimpleTableDemo(InventoryTable.table);
 		
 	}
@@ -149,15 +149,15 @@ public class Inventory implements TableModelListener, ItemListener{
         if (e.getSource() == comboBox) { 
         	lblNewLabel_1.setText((String) comboBox.getSelectedItem()); 
         	if(comboBox.getSelectedItem() == "Gym Inventory"){
-        		InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.gymInv, InventoryTable.inventoryCatagory);
+        		InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.gymInv, InventoryTable.Cbheaders);
        	     	SimpleTableDemo(InventoryTable.table);
         	}
         	if(comboBox.getSelectedItem() == "Science Inventory"){
-        		InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.sncInv, InventoryTable.inventoryCatagory);
+        		InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.sncInv, InventoryTable.Cbheaders);
        	     	SimpleTableDemo(InventoryTable.table);
         	}
         	if(comboBox.getSelectedItem() == "ChromeBook Inventory"){
-        		InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.cbInv, InventoryTable.inventoryCatagory);
+        		InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.cbInv, InventoryTable.Cbheaders);
        	     	SimpleTableDemo(InventoryTable.table);
         	}
         	
