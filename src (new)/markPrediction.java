@@ -5,12 +5,10 @@ import java.util.stream.IntStream;
 import static java.util.Arrays.asList;
 
 public class markPrediction {
-    private static final List<Integer> x = asList(1, 2, 3, 4, 5);
-    private static final List<Integer> y = asList(90, 71, 95, 84, 95);
+    private static final List<Integer> x = asList(1, 2, 3, 4, 5, 6, 7);
+    private static final List<Integer> y = asList(2, 2, 3, 4, 5, 6, 7);
 
     private static Double predictForValue(int predictForDependentVariable) {
-        if (x.size() != y.size())
-            throw new IllegalStateException("Must have equal X and Y data points");
 
         Integer numberOfDataValues = x.size();
 
@@ -104,10 +102,10 @@ public class markPrediction {
                         xSummed * xSummed) * (numberOfDataValues * sumOfYSquared -
                         ySummed * ySummed)));
 
-        return corr * 100;
+        return (float) (Math.pow(corr, 2) * 100);
     }
 
     public static void main(String[] args) {
-        System.out.println(predictForValue(6) + " Predicted \n" + correlationCoefficient() + " Accuracy");
+        System.out.println(predictForValue(8) + " Predicted \n" + correlationCoefficient() + " Accuracy");
     }
 }
