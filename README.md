@@ -12,4 +12,4 @@ Inventory Table:
 
 Dashboard:
 - Displays the date and time, how many students are present, how much of the science and gym inventory is availible, private notes, and a description of OneSchool
-- Buttons to access the atendence, mark book, inventory, and to log out 
+- Buttons to access the atendence, mark book, inventory, and a log out button 
