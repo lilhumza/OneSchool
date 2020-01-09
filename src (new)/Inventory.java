@@ -33,23 +33,23 @@ public class Inventory implements TableModelListener, ItemListener{
 	JScrollPane SPMarkbook = new JScrollPane();
 	JComboBox comboBox = new JComboBox();
 	JLabel lblNewLabel_1 = new JLabel("");
+	private final JButton btnNewRow = new JButton("New Row");
 
-	/**
-	 * Launch the application.
-	 */
-
-	/**
-	 * Create the application.
-	 * @wbp.parser.entryPoint
-	 */
 	public Inventory() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
+		btnNewRow.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String[][] newArray = Arrays.copyOf(InventoryTable.inventoryData, InventoryTable.inventoryData.length+1);
+				// Necessary: empty spaces are filled with null by default
+				newArray[InventoryTable.inventoryData.length-1][InventoryTable.inventoryData.length-1] = " ";
+				System.out.println(Arrays.deepToString(newArray));
+				InventoryTable.inventoryData = newArray;
+				InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.inventoryData, InventoryTable.headers);
+			}
+		});
 		frame = new JFrame();
 		frame.getContentPane().setBackground(UIManager.getColor("Tree.background"));
 		frame.setBounds(100,100,1000,500);
@@ -94,24 +94,30 @@ public class Inventory implements TableModelListener, ItemListener{
 		SimpleTableDemo1(comboBox);
 		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
 		gl_panel_2.setHorizontalGroup(
-			gl_panel_2.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, gl_panel_2.createSequentialGroup()
+			gl_panel_2.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_2.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblNewLabel_1)
-					.addPreferredGap(ComponentPlacement.RELATED, 816, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED, 717, Short.MAX_VALUE)
+					.addComponent(btnNewRow)
+					.addGap(40)
 					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
 		gl_panel_2.setVerticalGroup(
-			gl_panel_2.createParallelGroup(Alignment.LEADING)
+			gl_panel_2.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panel_2.createSequentialGroup()
 					.addGap(19)
 					.addComponent(lblNewLabel_1)
-					.addContainerGap(39, Short.MAX_VALUE))
-				.addGroup(Alignment.TRAILING, gl_panel_2.createSequentialGroup()
+					.addContainerGap(17, Short.MAX_VALUE))
+				.addGroup(gl_panel_2.createSequentialGroup()
 					.addContainerGap(31, Short.MAX_VALUE)
 					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
+				.addGroup(Alignment.LEADING, gl_panel_2.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(btnNewRow)
+					.addContainerGap(26, Short.MAX_VALUE))
 		);
 		panel_2.setLayout(gl_panel_2);
 		InventoryTable.displayTable(SPMarkbook);
@@ -131,6 +137,7 @@ public class Inventory implements TableModelListener, ItemListener{
     }
 
 	public void tableChanged(TableModelEvent e) {
+		fileWrite.readFile("InventoryDataGym.txt");
 		 int row = e.getFirstRow();
 	     int column = e.getColumn();
 	     TableModel model = (TableModel)e.getSource();
@@ -141,6 +148,7 @@ public class Inventory implements TableModelListener, ItemListener{
 	     InventoryTable.inventoryData[row][column] = (String) data;
 	     InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.inventoryData, InventoryTable.headers);
 	     SimpleTableDemo(InventoryTable.table);
+	     fileWrite.writeData(InventoryTable.inventoryData, InventoryTable.headers);
 		
 	}
 	
