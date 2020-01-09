@@ -1,0 +1,20 @@
+public static void readData(String name) {
+		
+		List<String> fullName = new ArrayList<>();
+	    String phrase;
+	   
+	    try {
+	    	FileReader in = new FileReader(name+".txt");
+	    	BufferedReader readFile = new BufferedReader(in);
+	    	while ((phrase = readFile.readLine()) != null) {
+	    		fullName.add(phrase);
+	    	}
+	    	readFile.close();
+	    	in.close();
+	    } catch (IOException e) { //this is the minimum catch syntax needed
+	      System.out.println("Problem reading file.");
+	      System.err.println("IOException: " + e.getMessage());
+	    }
+	    
+	    String names[] = fullName.toArray(new String[0]);
+	}
