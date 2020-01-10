@@ -2,7 +2,7 @@
 OneSchool is an intuituve solution for teachers to quickly access and manage related items to students in their respective classes. Included options are Attendance, Markbook and Inventories for the GYM and Science Depts. Rather than opening multiple applications, OneSchool is the all in one application that all teachers need, as it is easy and convenient to use.
 
 # User Case Diagram:
-User Case Diagram: (https://www.lucidchart.com/invitations/accept/a927ccd4-0810-4bf9-84c0-37a30bde5c4e)
+[User Case Diagram](https://www.lucidchart.com/invitations/accept/a927ccd4-0810-4bf9-84c0-37a30bde5c4e)
 
 The above user case diagram represents the teacher interation with the platform and the various options available upon use of the program. The diagram details the 4 essential operands available as well as the interactions causing the operands and overall operating. It details the program experience from start to finish, from the teacher loggin onto the system, user verification protocol, and then the actual operands to add marks, check out equipment, take attendance, etc.
 
