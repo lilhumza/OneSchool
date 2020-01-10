@@ -42,11 +42,7 @@ public class Inventory implements TableModelListener, ItemListener{
 	private void initialize() {
 		btnNewRow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String[][] newArray = Arrays.copyOf(InventoryTable.inventoryData, InventoryTable.inventoryData.length+1);
-				// Necessary: empty spaces are filled with null by default
-				newArray[InventoryTable.inventoryData.length-1][InventoryTable.inventoryData.length-1] = " ";
-				System.out.println(Arrays.deepToString(newArray));
-				InventoryTable.inventoryData = newArray;
+				InventoryTable.inventoryData = resizeArray.addOneRow(InventoryTable.inventoryData);
 				InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.inventoryData, InventoryTable.headers);
 			}
 		});
@@ -76,12 +72,14 @@ public class Inventory implements TableModelListener, ItemListener{
 		GroupLayout gl_classXMarkbook = new GroupLayout(classXMarkbook);
 		gl_classXMarkbook.setHorizontalGroup(
 			gl_classXMarkbook.createParallelGroup(Alignment.LEADING)
-				.addComponent(SPMarkbook, GroupLayout.DEFAULT_SIZE, 984, Short.MAX_VALUE)
 				.addComponent(panel_2, GroupLayout.DEFAULT_SIZE, 984, Short.MAX_VALUE)
+				.addGroup(gl_classXMarkbook.createSequentialGroup()
+					.addComponent(SPMarkbook, GroupLayout.DEFAULT_SIZE, 974, Short.MAX_VALUE)
+					.addContainerGap())
 		);
 		gl_classXMarkbook.setVerticalGroup(
-			gl_classXMarkbook.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_classXMarkbook.createSequentialGroup()
+			gl_classXMarkbook.createParallelGroup(Alignment.TRAILING)
+				.addGroup(Alignment.LEADING, gl_classXMarkbook.createSequentialGroup()
 					.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addComponent(SPMarkbook, GroupLayout.PREFERRED_SIZE, 395, GroupLayout.PREFERRED_SIZE)
@@ -92,14 +90,24 @@ public class Inventory implements TableModelListener, ItemListener{
 		
 		comboBox.setModel(new DefaultComboBoxModel(InventoryTable.inventoryCatagory));
 		SimpleTableDemo1(comboBox);
+		
+		JButton btnNewColoum = new JButton("New Coloum");
+		btnNewColoum.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InventoryTable.headers = resizeArray.addOneColoum(InventoryTable.headers);
+				InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.inventoryData, InventoryTable.headers);
+			}
+		});
 		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
 		gl_panel_2.setHorizontalGroup(
 			gl_panel_2.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_2.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblNewLabel_1)
-					.addPreferredGap(ComponentPlacement.RELATED, 717, Short.MAX_VALUE)
-					.addComponent(btnNewRow)
+					.addGap(612)
+					.addComponent(btnNewColoum, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(btnNewRow, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
 					.addGap(40)
 					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
@@ -111,13 +119,15 @@ public class Inventory implements TableModelListener, ItemListener{
 					.addComponent(lblNewLabel_1)
 					.addContainerGap(17, Short.MAX_VALUE))
 				.addGroup(gl_panel_2.createSequentialGroup()
-					.addContainerGap(31, Short.MAX_VALUE)
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addGroup(gl_panel_2.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnNewRow)
+						.addComponent(btnNewColoum))
+					.addGap(26))
+				.addGroup(gl_panel_2.createSequentialGroup()
+					.addGap(24)
 					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap())
-				.addGroup(Alignment.LEADING, gl_panel_2.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(btnNewRow)
-					.addContainerGap(26, Short.MAX_VALUE))
+					.addContainerGap(18, Short.MAX_VALUE))
 		);
 		panel_2.setLayout(gl_panel_2);
 		InventoryTable.displayTable(SPMarkbook);
