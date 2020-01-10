@@ -1,4 +1,6 @@
 import java.awt.Font;
+import java.awt.List;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import javax.swing.JTable;
@@ -10,9 +12,10 @@ import javax.swing.table.JTableHeader;
 
 
 public class InventoryTable {
-
+	public static DefaultTableModel tableModel = new DefaultTableModel();
 	static JTable table;
 	static JScrollPane SPMarkbook;
+	
 	//Sample layout for the items inside the inventory table
 	static String[][] inventoryData = {
 			{"Beaker", "1234", "Alot", "InStock"},
@@ -40,7 +43,7 @@ public class InventoryTable {
 	};
 	//Sample layout for tables's headers
 	public static String[] headers = {
-		" ", "Item#", "Quantity", "Status"
+		" ", "Item#", "Quantity", "Status",
 	};
 	public static String[] Cbheaders = {
 			" ", "Item#", "Quantity", "Status"
@@ -53,9 +56,13 @@ public class InventoryTable {
 		SPMarkbook = SP;
 		createTable(SP, inventoryData, headers);
 	}
-	//Creats the table and sets the coloum and row height and widths
+	//Creates the table and sets the coloum and row height and widths
+
+	/**
+	 * @wbp.parser.entryPoint
+	 */
 	public static void createTable(JScrollPane scrollPane, String[][] coloums, String[] rows) {
-		table = new JTable();
+		table = new JTable(tableModel);
 		table.setFont(new Font("Times New Roman", Font.PLAIN, 15));
 		table.setModel(new DefaultTableModel(
 				coloums, rows
