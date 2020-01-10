@@ -58,7 +58,7 @@ public class LoginScreen {
 	//Displays the log in screen 
 	private void initialize() throws Exception{
 		loginScreen.setBounds(100, 100, 1000, 500);
-		loginScreen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		loginScreen.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		loginScreen.getContentPane().setLayout(null);
 
 		username = new JTextField();
