@@ -147,7 +147,6 @@ public class Inventory implements TableModelListener, ItemListener{
     }
 
 	public void tableChanged(TableModelEvent e) {
-		fileWrite.readFile("InventoryDataGym.txt");
 		 int row = e.getFirstRow();
 	     int column = e.getColumn();
 	     TableModel model = (TableModel)e.getSource();
