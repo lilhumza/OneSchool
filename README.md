@@ -6,7 +6,7 @@ OneSchool is an intuituve solution for teachers to quickly access and manage rel
 
 The above user case diagram represents the teacher interation with the platform and the various options available upon use of the program. The diagram details the 4 essential operands available as well as the interactions causing the operands and overall operating. It details the program experience from start to finish, from the teacher loggin onto the system, user verification protocol, and then the actual operands to add marks, check out equipment, take attendance, etc.
 
-# Program Operands
+# Program Operands:
 The program begins at the dashboard, which consists of a NavBar, a quick summary, private notes, current date & time, and the quick metrics for the attendance & equipment sign out operands. The quick metrics consist of the number of students present, total number of science equipment available, and the total number of Gym equipment available. The NavBar consists of the buttons to initiate any of the operands and close the program/log out.
 
 Mark Book:
@@ -26,5 +26,7 @@ The inventory operand allows for the teacher to view all gym and science equipme
   - Displays the inventory for the gym and science department
   - Shows the iteam, iteam#, quantity, and the status of the iteam
   - Teachers can add iteams and assign them to students 
-
+ 
+ # Usage:
+ 
 
