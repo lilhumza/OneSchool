@@ -95,8 +95,8 @@ public class Inventory implements TableModelListener, ItemListener{
 			gl_panel_2.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_2.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(lblNewLabel_1)
-					.addGap(712)
+					.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 501, GroupLayout.PREFERRED_SIZE)
+					.addGap(216)
 					.addComponent(btnNewRow, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
 					.addGap(40)
 					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
@@ -105,10 +105,6 @@ public class Inventory implements TableModelListener, ItemListener{
 		gl_panel_2.setVerticalGroup(
 			gl_panel_2.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panel_2.createSequentialGroup()
-					.addGap(19)
-					.addComponent(lblNewLabel_1)
-					.addContainerGap(17, Short.MAX_VALUE))
-				.addGroup(gl_panel_2.createSequentialGroup()
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addComponent(btnNewRow)
 					.addGap(26))
@@ -116,6 +112,10 @@ public class Inventory implements TableModelListener, ItemListener{
 					.addGap(24)
 					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(18, Short.MAX_VALUE))
+				.addGroup(Alignment.LEADING, gl_panel_2.createSequentialGroup()
+					.addGap(19)
+					.addComponent(lblNewLabel_1)
+					.addContainerGap(17, Short.MAX_VALUE))
 		);
 		panel_2.setLayout(gl_panel_2);
 		InventoryTable.displayTable(SPMarkbook);
