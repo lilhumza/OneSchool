@@ -35,6 +35,25 @@ public class dashBoard {
 	 * Initialize the contents of the dashboardFrame.
 	 */
 	private void initialize() {
+		
+		
+		String gymInv, sncInv = "";
+		
+		try {
+	        	FileReader data = new FileReader("metrics.txt");
+	        	BufferedReader readData = new BufferedReader(data);
+	       
+	        	gymInv = readData.readLine();
+	        	sncInv = readData.readLine();
+	        
+	        	readData.close();
+	        	data.close();
+	        	System.out.println("Data written to file.");
+	      	} catch (IOException e) {
+	        	System.out.println("Problem writing to file.");
+	       		System.err.println("IOException: " + e.getMessage());
+	     	}
+		
 		//JFrame declaration and setup
 		dashboardFrame = new JFrame();
 		dashboardFrame.getContentPane().setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
@@ -165,7 +184,7 @@ public class dashBoard {
 		gymPanel.setLayout(null);
 		
 		//Gym Equipment Metric Label
-		JLabel lblGymLabel = new JLabel("17/32");
+		JLabel lblGymLabel = new JLabel(gymInv);
 		lblGymLabel.setBounds(0, 0, 165, 165);
 		lblGymLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblGymLabel.setFont(new Font("Times New Roman", Font.PLAIN, 40));
@@ -185,7 +204,7 @@ public class dashBoard {
 		sncPanel.setLayout(null);
 		
 		//SNC Equipment Metric Label
-		JLabel lblSncLabel = new JLabel("ZERO");
+		JLabel lblSncLabel = new JLabel(sncInv);
 		lblSncLabel.setBounds(0, 0, 165, 165);
 		lblSncLabel.setFont(new Font("Times New Roman", Font.PLAIN, 40));
 		lblSncLabel.setHorizontalAlignment(SwingConstants.CENTER);
