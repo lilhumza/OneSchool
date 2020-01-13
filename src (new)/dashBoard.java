@@ -1,5 +1,10 @@
 import java.awt.EventQueue;
-
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -37,7 +42,7 @@ public class dashBoard {
 	private void initialize() {
 		
 		
-		String gymInv, sncInv = "";
+		String gymInv = "", sncInv = "";
 		
 		try {
 	        	FileReader data = new FileReader("metrics.txt");
