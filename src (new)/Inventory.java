@@ -33,12 +33,19 @@ public class Inventory implements TableModelListener, ItemListener{
 	JScrollPane SPMarkbook = new JScrollPane();
 	JComboBox comboBox = new JComboBox();
 	JLabel lblNewLabel_1 = new JLabel("");
+	private final JButton btnNewRow = new JButton("New Row");
 
 	public Inventory() {
 		initialize();
 	}
 
 	private void initialize() {
+		btnNewRow.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InventoryTable.inventoryData = resizeArray.addOneRow(InventoryTable.inventoryData);
+				InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.inventoryData, InventoryTable.headers);
+			}
+		});
 		frame = new JFrame();
 		frame.getContentPane().setBackground(UIManager.getColor("Tree.background"));
 		frame.setBounds(100,100,1000,500);
@@ -89,7 +96,9 @@ public class Inventory implements TableModelListener, ItemListener{
 				.addGroup(gl_panel_2.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblNewLabel_1)
-					.addPreferredGap(ComponentPlacement.RELATED, 846, Short.MAX_VALUE)
+					.addGap(712)
+					.addComponent(btnNewRow, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+					.addGap(40)
 					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
@@ -99,6 +108,10 @@ public class Inventory implements TableModelListener, ItemListener{
 					.addGap(19)
 					.addComponent(lblNewLabel_1)
 					.addContainerGap(17, Short.MAX_VALUE))
+				.addGroup(gl_panel_2.createSequentialGroup()
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(btnNewRow)
+					.addGap(26))
 				.addGroup(gl_panel_2.createSequentialGroup()
 					.addGap(24)
 					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
