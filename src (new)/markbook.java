@@ -86,23 +86,40 @@ public class markbook implements TableModelListener, ItemListener{
 		
 		comboBox.setModel(new DefaultComboBoxModel(marksTable.calsses));
 		detectCBChanges(comboBox);
+		
+		JButton button = new JButton("New Coloum");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InventoryTable.headers = resizeArray.addOneColoum(InventoryTable.headers);
+				InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.inventoryData, InventoryTable.headers);
+			}
+		});
+		
+		JButton button_1 = new JButton("New Row");
 		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
 		gl_panel_2.setHorizontalGroup(
-			gl_panel_2.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, gl_panel_2.createSequentialGroup()
+			gl_panel_2.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_2.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(MarkBookTitle)
-					.addPreferredGap(ComponentPlacement.RELATED, 816, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED, 576, Short.MAX_VALUE)
+					.addComponent(button, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
+					.addGap(68)
 					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
 		gl_panel_2.setVerticalGroup(
-			gl_panel_2.createParallelGroup(Alignment.LEADING)
+			gl_panel_2.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panel_2.createSequentialGroup()
 					.addGap(19)
-					.addComponent(MarkBookTitle)
-					.addContainerGap(39, Short.MAX_VALUE))
-				.addGroup(Alignment.TRAILING, gl_panel_2.createSequentialGroup()
+					.addGroup(gl_panel_2.createParallelGroup(Alignment.BASELINE)
+						.addComponent(MarkBookTitle)
+						.addComponent(button)
+						.addComponent(button_1))
+					.addContainerGap(17, Short.MAX_VALUE))
+				.addGroup(gl_panel_2.createSequentialGroup()
 					.addContainerGap(31, Short.MAX_VALUE)
 					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
