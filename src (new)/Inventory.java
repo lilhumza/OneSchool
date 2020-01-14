@@ -44,6 +44,7 @@ public class Inventory implements TableModelListener, ItemListener{
 			public void actionPerformed(ActionEvent e) {
 				InventoryTable.inventoryData = resizeArray.addOneRow(InventoryTable.inventoryData);
 				InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.inventoryData, InventoryTable.headers);
+				InventoryTable.writeFile();
 			}
 		});
 		frame = new JFrame();
