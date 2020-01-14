@@ -38,29 +38,6 @@ public class InventoryTable {
 			
 	};
 	
-	public static void writeFile() {
-		
-		try {
-			FileWriter data = new FileWriter("metrics.txt");
-			BufferedWriter writeData = new BufferedWriter(data);
-			       
-			writeData.write(gymInv.length);
-			writeData.newLine();
-			writeData.write(sncInv.length);
-			writeData.newLine();
-			        
-			writeData.close();
-			data.close();
-			System.out.println("Data written to file.");
-			
-		} catch (IOException e) {
-			        System.out.println("Problem writing to file.");
-			        System.err.println("IOException: " + e.getMessage());
-		}
-		
-	}
-	
-	
 	static String[][] cbInv = {
 			{"CB", "2", "1", "InStock"},
 			{"CB", "3", "1", "Out"},
