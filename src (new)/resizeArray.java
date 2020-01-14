@@ -22,7 +22,7 @@ public class resizeArray {
 	    		s[i] = array[i];
 	    	}
 	    }	
-		
+	    InventoryTable.writeFile();
 		return s;
 	}
 	public static String[][] addOneRow(String[][] array){
@@ -38,7 +38,8 @@ public class resizeArray {
 	    		}
 	    	}
 	    }	
-		
+	    InventoryTable.writeFile();
 		return s;
+		
 	}
 }
