@@ -34,15 +34,17 @@ public class dashBoard {
 	 */
 	public dashBoard() {
 		initialize();
+		
 	}
 
 	/**
 	 * Initialize the contents of the dashboardFrame.
 	 */
+	String gymInv = "", sncInv = "";
 	private void initialize() {
 		
 		
-		String gymInv = "", sncInv = "";
+		
 		
 		try {
 	        	FileReader data = new FileReader("metrics.txt");
@@ -260,6 +262,25 @@ public class dashBoard {
 		    	SimpleDateFormat formatDate = new SimpleDateFormat("h:mm a");
 			    String dateString = formatDate.format(new Date()).toString();
 				lblTime.setText(dateString);
+				
+				
+				try {
+		        	FileReader data = new FileReader("metrics.txt");
+		        	BufferedReader readData = new BufferedReader(data);
+		       
+		        	gymInv = readData.readLine();
+		        	sncInv = readData.readLine();
+		        	
+		        	readData.close();
+		        	data.close();
+		        	System.out.println("Data written to file.");
+		      	} catch (IOException e1) {
+		        	System.out.println("Problem writing to file.");
+		       		System.err.println("IOException: " + e1.getMessage());
+		     	}
+				lblSncLabel.setText(sncInv);
+				lblGymLabel.setText(gymInv);
+				
 		    }
 		});
 		SimpleTimer.start();	
