@@ -109,21 +109,6 @@ public class dashBoard {
 		btnMarkBook.setBorder(emptyBorder);
 		btnMarkBook.setFocusPainted(false);
 		
-		//JButton for navBar attendance button declaration and setup
-		JButton btnAttendance = new JButton("Attendance");
-		btnAttendance.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-			}
-		});
-		btnAttendance.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		btnAttendance.setBounds(19, 142, 115, 29);
-		navPanel.add(btnAttendance);
-		btnAttendance.setForeground(Color.WHITE);
-		btnAttendance.setBackground(Color.DARK_GRAY);
-		btnAttendance.setBorder(emptyBorder);
-		btnAttendance.setFocusPainted(false);
-		
 		//JButton for navBar Log Out button declaration and setup
 		JButton btnLogOut = new JButton("Log Out");
 		btnLogOut.addMouseListener(new MouseAdapter() {
@@ -162,27 +147,6 @@ public class dashBoard {
 		btnInventory.setBounds(19, 222, 115, 29);
 		navPanel.add(btnInventory);
 		
-		//Quick Stats - Attendance Metric
-		JPanel attendancePanel = new JPanel();
-		attendancePanel.setBounds(192, 250, 165, 165);
-		attendancePanel.setBackground(Color.LIGHT_GRAY);
-		dashboardFrame.getContentPane().add(attendancePanel);
-		attendancePanel.setLayout(null);
-		
-		//Attendance Metric Label
-		JLabel lblAttendance = new JLabel("16/29");
-		lblAttendance.setHorizontalAlignment(SwingConstants.CENTER);
-		lblAttendance.setBounds(0, 0, 165, 165);
-		lblAttendance.setFont(new Font("Times New Roman", Font.PLAIN, 40));
-		attendancePanel.add(lblAttendance);
-		
-		//Present Label
-		JLabel lblPresent = new JLabel("Present");
-		lblPresent.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-		lblPresent.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPresent.setBounds(25, 129, 125, 20);
-		attendancePanel.add(lblPresent);
-		
 		//Quick Stats - Gym Inventory
 		JPanel gymPanel = new JPanel();
 		gymPanel.setBounds(390, 250, 165, 165);
@@ -191,7 +155,7 @@ public class dashBoard {
 		gymPanel.setLayout(null);
 		
 		//Gym Equipment Metric Label
-		JLabel lblGymLabel = new JLabel(gymInv);
+		JLabel lblGymLabel = new JLabel("3/3");
 		lblGymLabel.setBounds(0, 0, 165, 165);
 		lblGymLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblGymLabel.setFont(new Font("Times New Roman", Font.PLAIN, 40));
@@ -211,7 +175,7 @@ public class dashBoard {
 		sncPanel.setLayout(null);
 		
 		//SNC Equipment Metric Label
-		JLabel lblSncLabel = new JLabel(sncInv);
+		JLabel lblSncLabel = new JLabel("3/3");
 		lblSncLabel.setBounds(0, 0, 165, 165);
 		lblSncLabel.setFont(new Font("Times New Roman", Font.PLAIN, 40));
 		lblSncLabel.setHorizontalAlignment(SwingConstants.CENTER);
