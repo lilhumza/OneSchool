@@ -258,12 +258,27 @@ public class dashBoard {
 		txtrPrivateNotes.setBounds(582, 45, 359, 190);
 		dashboardFrame.getContentPane().add(txtrPrivateNotes);
 		
-		JLabel lblCB = new JLabel("Chrome Books");
-		lblCB.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCB.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-		lblCB.setBounds(20, 134, 135, 20);
-		lblCB.setForeground(Color.white);
-		CBPanel.add(lblCB);
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setBackground(Color.GRAY);
+		panel.setBounds(215, 250, 165, 165);
+		dashboardFrame.getContentPane().add(panel);
 		
+		JLabel label = new JLabel("3/3");
+		label.setBounds(0, 0, 165, 165);
+		panel.add(label);
+		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setFont(new Font("Times New Roman", Font.PLAIN, 40));
+		
+		JLabel lblChromebooks = new JLabel("ChromeBooks");
+		lblChromebooks.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+		lblChromebooks.setBounds(20, 134, 135, 20);
+		panel.add(lblChromebooks);
+		
+		JLabel label_1 = new JLabel("");
+		label_1.setBounds(264, 250, 165, 165);
+		dashboardFrame.getContentPane().add(label_1);
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setFont(new Font("Times New Roman", Font.PLAIN, 40));
 	}
 }
