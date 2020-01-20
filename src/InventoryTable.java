@@ -25,23 +25,23 @@ public class InventoryTable {
 			{"STUFF", "#####", "Alot", "InStock"},
 			
 	};
-	static String[][] gymInv = {
-			{"Ball", "1234", "Alot", "InStock"},
-			{"Ball", "4321", "Alot", "InStock"},
-			{"Ball", "#####", "Alot", "InStock"},
+	static String[][] gymInv = { //Gym Inventory
+			{"Baseball", "1234", "23", "In Stock"},
+			{"Bean Bag", "4321", "32", "In Stock"},
+			{"Hula Hoop", "#####", "7", "In Stock"},
 			
 	};
 	static String[][] sncInv = {
-			{"Beaker", "1234", "Alot", "InStock"},
-			{"Beaker", "4321", "Alot", "InStock"},
-			{"Beaker", "#####", "Alot", "InStock"},
+			{"Beaker", "1234", "56", "In Stock"},
+			{"Lab Quest", "4321", "4", "In Stock"},
+			{"Collision Carts", "#####", "9", "In Stock"},
 			
 	};
 	
 	static String[][] cbInv = {
-			{"CB", "2", "1", "InStock"},
-			{"CB", "3", "1", "Out"},
-			{"CB", "#####", "1", "InStock"},
+			{"CB - Library", "2", "1", "InStock"},
+			{"CB - Buisness Dept.", "3", "1", "Out"},
+			{"CB - French Dept.", "#####", "1", "InStock"},
 			
 	};
 	//Sample layout for tables's headers
