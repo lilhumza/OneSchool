@@ -29,18 +29,18 @@ import javax.swing.DefaultComboBoxModel;
 
 public class Inventory implements TableModelListener, ItemListener{
 
-	public JFrame frame;
+	public JFrame frame; //Jframe declaration and setup
 	JScrollPane SPMarkbook = new JScrollPane();
 	JComboBox comboBox = new JComboBox();
 	JLabel lblNewLabel_1 = new JLabel("");
 	private final JButton btnNewRow = new JButton("New Row");
 
-	public Inventory() {
+	public Inventory() { //Initializing the JFrame and corresponding methods
 		initialize();
 	}
 
 	private void initialize() {
-		btnNewRow.addActionListener(new ActionListener() {
+		btnNewRow.addActionListener(new ActionListener() { //operands for adding indices to the table
 			public void actionPerformed(ActionEvent e) {
 				InventoryTable.inventoryData = resizeArray.addOneRow(InventoryTable.inventoryData);
 				InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.inventoryData, InventoryTable.headers);
@@ -134,7 +134,7 @@ public class Inventory implements TableModelListener, ItemListener{
 		comboBox.addItemListener(this);
     }
 
-	public void tableChanged(TableModelEvent e) {
+	public void tableChanged(TableModelEvent e) { //Changing the indices and contents of the table
 		 int row = e.getFirstRow();
 	     int column = e.getColumn();
 	     TableModel model = (TableModel)e.getSource();
@@ -149,7 +149,7 @@ public class Inventory implements TableModelListener, ItemListener{
 		
 	}
 	
-	public void itemStateChanged(ItemEvent e) { 
+	public void itemStateChanged(ItemEvent e) {  //Switch between various Inventory Table
         if (e.getSource() == comboBox) { 
         	lblNewLabel_1.setText((String) comboBox.getSelectedItem()); 
         	if(comboBox.getSelectedItem() == "Gym Inventory"){
