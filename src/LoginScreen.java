@@ -16,7 +16,7 @@ import javax.swing.JPasswordField;
 //Creates the log in screen
 public class LoginScreen {
 
-	public static JFrame loginScreen = new JFrame();
+	public static JFrame loginScreen = new JFrame(); //Jfreame setup and declaration
 	public static JTextField username;
 	public static JPasswordField password;
 	public static LoginScreen window;
