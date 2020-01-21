@@ -31,5 +31,5 @@ The inventory operand allows for the teacher to view all gym and science equipme
  
 Usage of the program is through the executable JAR File. Additionally cloning the repository into a local IDE and running is another possibility.
 
-Usrname and Password not needed, just press login
+Username and Password not needed, just press login
 
