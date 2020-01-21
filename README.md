@@ -29,8 +29,7 @@ The inventory operand allows for the teacher to view all gym and science equipme
  
  # Usage:
  
-Usage of the program is through the executable JAR File. Additionally cloning the repository into a local IDE and running is another possibility. 
+Usage of the program is through the executable JAR File. Additionally cloning the repository into a local IDE and running is another possibility.
 
-User: guest
-Pass: guest
+Usrname and Password not needed, just press login
 
