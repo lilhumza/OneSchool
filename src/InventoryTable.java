@@ -20,9 +20,9 @@ public class InventoryTable {
 	
 	//Sample layout for the items inside the inventory table
 	static String[][] inventoryData = {
-			{"Beaker", "1234", "Alot", "InStock"},
-			{"Ball", "4321", "Alot", "InStock"},
-			{"STUFF", "#####", "Alot", "InStock"},
+			{"Beaker", "1234", "56", "In Stock"},
+			{"Bean Bag", "4321", "32", "In Stock"},
+			{"CB - Library", "2", "1", "In Stock"},
 			
 	};
 	static String[][] gymInv = { //Gym Inventory
@@ -39,9 +39,9 @@ public class InventoryTable {
 	};
 	
 	static String[][] cbInv = {
-			{"CB - Library", "2", "1", "InStock"},
+			{"CB - Library", "2", "1", "In Stock"},
 			{"CB - Buisness Dept.", "3", "1", "Out"},
-			{"CB - French Dept.", "#####", "1", "InStock"},
+			{"CB - French Dept.", "1", "1", "In Stock"},
 			
 	};
 	//Sample layout for tables's headers

@@ -145,7 +145,7 @@ public class Inventory implements TableModelListener, ItemListener{
 	     InventoryTable.inventoryData[row][column] = (String) data;
 	     InventoryTable.createTable(InventoryTable.SPMarkbook, InventoryTable.inventoryData, InventoryTable.headers);
 	     SimpleTableDemo(InventoryTable.table);
-	     fileWrite.writeData(InventoryTable.inventoryData, InventoryTable.headers);
+	     //fileWrite.writeData(InventoryTable.inventoryData, InventoryTable.headers);
 		
 	}
 	
